@@ -1,0 +1,560 @@
+#+TITLE: The spheres project
+#+STARTUP: indent showall
+* General idea (pre)
+*A pre natal idea for a web application*
+
+ + An application that in it's core has a map or a map or maps or a db of maps that represent a solar system and the attributes of the bodies that compose it.
+ + the data structure
+ + the values (km x 10 ^23?...  distances, diameters.. revolutions..)
+ + operations ;relations between bodies, speeding up/down, simulating, events..
+ + representation; first idea that came to mind was sound, perhaps some 3d library could be easy to implement (cimulation like..)
+
+** the data structure
+
+*** *what we got*
+*the solar system:*
+*Age*	4.568 billion years
+*Location*
+Local Interstellar Cloud, Local Bubble,
+Orion–Cygnus Arm, Milky Way
+*System mass*	1.0014 Solar masses
+*Nearest star*	
+Proxima Centauri  (4.25 ly)
+Alpha Centauri (4.37 ly)
+*Nearest known planetary system*	Proxima Centauri system  (4.25 ly)
+*Planetary system*
+*Semi-major axis of outer known planet (Neptune)*	30.10 AU  (4.503 billion km)
+*Distance to Kuiper cliff*	50 AU
+*Populations*
+*Stars*	1  (Sun)
+*Known planets*	
+8 (MercuryVenusEarthMars
+JupiterSaturnUranusNeptune)
+*Known dwarf planets*	
+Possibly several hundred;[1]
+five currently recognized by the IAU
+(CeresPlutoHaumeaMakemakeEris)
+*Known natural satellites*	
+525
+(185 planetary[2]347 minor planetary[3])
+*Known minor planets*	778,897  (as of 2018-06-21)[4]
+*Known comets*	4,017  (as of 2018-06-21)[4]
+*Identified rounded satellites*	19
+*Orbit* about Galactic Center
+*Invariable-to-galactic plane inclination*	60.19°  (ecliptic)
+*Distance to Galactic Center*	27,000 ± 1,000 ly
+*Orbital speed*	220 km/s
+*Orbital period*	225–250 Myr
+*Star-related properties*
+*Spectral type*	G2V
+*Frost line*	≈5 AU[5]
+*Distance to heliopause*	≈120 AU
+*Hill sphere radius*	≈1–3 ly
+
+*** *planet values* (example):
+*Epoch* J2000[n 1]
+*Aphelion*	152100000 km[n 2]
+(94500000 mi; 1.017 AU)
+*Perihelion*	147095000 km[n 2]
+(91401000 mi; 0.98327 AU)
+*Semi-major axis*
+149598023 km[1]
+(92955902 mi; 1.00000102 AU)
+*Eccentricity*	0.0167086[1]
+*Orbital period*
+365.256363004 d[2]
+(1.00001742096 yr)
+*Average orbital speed*
+29.78 km/s[3]
+(107200 km/h; 66600 mph)
+*Mean anomaly*
+358.617°
+*Inclination*	
+7.155° to the Sun's equator;
+1.57869°[4] to invariable plane;
+0.00005° to J2000 ecliptic
+*Longitude of ascending node*
+−11.26064°[3] to J2000 ecliptic
+*Argument of perihelion*
+114.20783°[3]
+*Satellites*	
+1 natural satellite: the Moon
+5 quasi-satellites
+>1 700 operational artificial satellites[5]
+>16 000 space debris[n 3]
+*Physical characteristics
+*Mean radius*
+6371.0 km (3958.8 mi)[6]
+*Equatorial radius
+6378.1 km (3963.2 mi)[7][8]
+*Polar radius*
+6356.8 km (3949.9 mi)[9]
+*Flattening*	0.0033528[10]
+1/298.257222101 (ETRS89)
+*Circumference*	
+40075.017 km equatorial (24901.461 mi)[8]
+40007.86 km meridional (24859.73 mi)[11][12]
+*Surface area*
+510072000 km2 (196940000 sq mi)[13][14][n 4]
+148940000 km2 land (57510000 sq mi; 29.2%)
+361132000 km2 water (139434000 sq mi; 70.8%)
+*Volume	1.08321 x 10e12 km3 (2.59876×1011 cu mi)[3]
+*Mass	5.97237×1024 kg (1.31668×1025 lb)[15] 
+(3.0×10−6 M☉)
+*Mean density*
+5.514 g/cm3 (0.1992 lb/cu in)[3]
+*Surface gravity*
+9.807 m/s2 (1 g; 32.18 ft/s2)[16]
+*Moment of inertia factor*
+0.3307[17]
+*Escape velocity*
+11.186 km/s[3] 
+(40270 km/h; 25020 mph)
+*Sidereal rotation period*
+0.99726968 d[18] 
+(23h 56m 4.100s)
+*Equatorial rotation velocity*
+0.4651 km/s[19] 
+(1674.4 km/h; 1040.4 mph)
+*Axial tilt*
+23.4392811°[2]
+*Albedo	
+0.367 geometric[3]
+0.306 Bond[3]
+*Surface temp.*	*min*	*mean*	*max*
+Kelvin	184 K[20]	288 K[21]	330 K[22]
+Celsius	−89.2 °C	14.9 °C	56.9 °C
+Fahrenheit	−128.5 °F	58.7 °F	134.3 °F
+*Atmosphere*
+*Surface pressure
+101.325 kPa (at MSL)
+*Composition by volume	
+78.08% nitrogen (N
+2; dry air)[3]
+20.95% oxygen (O
+2)
+0.934% argon
+0.0408% carbon dioxide[23]
+~ 1% water vapor (climate variable)
+
+** values
+
+*** the issue of scale / need to study the relations between the interplanetery values and frequencies 
+
+** Operations
+
+*** What about statistics and analytics?
+
+** Representation
+
+*** look at  audio on Clojure (github)
+
+**** Overtone
+[[https://www.youtube.com/watch?v=RYZeQ6t_5SA][best music theory introduction ever..]]
+
+
+
+*** Graphics/ 3d
+
+ - Quill library
+
+
+
+* Numeric representations
+
+In wikipedia the numbers are represented in scientific form:
+
+1.08321×10¹²
+
+which translates in clojure to:
+
+1.08321E12
+
+That is not (* 1.08321 10e12)  but (* 1.08321 (java.lang.Math/pow 10 12))
+
+This can be toggled to a string:
+user> (format "%.0f" 1.08321E12) 
+=> 1083210000000
+
+And from string to double:
+(Double/parseDouble (format "%.0f" 1.08321E12))
+
+tested to work:
+(format "%.0f" (Double/parseDouble (format "%.0f" 1.08321E12)))
+=> 1083210000000
+
+* the database
+
+In case of a problem:
+;;log into postgres user:
+;;[adam@adam-pc ~]$ sudo -u posqtgres -i
+
+;;first time initislizing db:
+;;initdb -D /usr/local/pgsql/data
+
+;;some problems that raise the excetion: no lock file found something...:
+
+;;[adam@adam-pc run]$ sudo mkdir postgresql
+;;[adam@adam-pc run]$ sudo chown -R postgres:postgres /var/run/postgresql
+;;[adam@adam-pc run]$ sudo -u postgres -i
+
+;;starting server:
+
+;;[postgres@adam-pc ~]$ pg_ctl -D /user/local/pgsql/data -l logfile start
+;;waiting for server to start.... done
+;;server started
+
+---------------------------------------------
+*creating the database:*
+
+#+BEGIN_SRC sql
+CREATE DATABASE spheres_db OWNER admin;
+\c spheres_db
+#+END_SRC
+
+
+**  Creating a new application on lein:
+
+lein new luminus spheres +postgres 
+
+- Add to project.clj the dependency:
+
+*[clj.pdf "2.2.33"]*
+*[cider/cider-nrepl "0.18.0"]*
+
+** Add the database url to the project, (test-config.edn and dev-config.edn):
+
+#+BEGIN_SRC clojure
+ ; set your dev database connection URL here
+ :database-url "postgresql://localhost/spheres_db?user=admin&password=admin"
+
+
+ ; set your test database connection URL here
+ :database-url "postgresql://localhost/spheres_test?user=admin&password=admin"
+#+END_SRC
+
+** The table
+#+BEGIN_SRC sql-mode 
+CREATE TABLE bodies
+(name VARCHAR(30) PRIMARY KEY,
+ volume VARCHAR(30),
+ apoapsis VARCHAR(30),
+ periapsis VARCHAR(30),
+ mass VARCHAR(30),
+ surface_area VARCHAR(30)
+ satelites INT,
+ circumference VARCHAR(30),
+ form VARCHAR(30),
+ orbital_period VARCHAR(30),
+ parent VARCHAR(30);
+
+#+END_SRC
+
+#+begin_src sql :engine postgresql :dbhost localhost :dbuser admin :dbpassword admin :database spheres_db
+select * from bodies
+
+#+END_SRC
+
+#+RESULTS:
+| name | volume | apoapsis | perihelion | mass | surface_area | satelites | circumference | form | orbital_period | parent |
+|------+--------+----------+------------+------+--------------+-----------+---------------+------+----------------+--------|
+
+
+** lein run migrate
+to create the table.
+
+** cider plugin and handler
+
+add:
+
+#+name:spheres/src/clj/spheres/core.clj
+#+BEGIN_SRC clojure
+(require ...
+         ...
+         [cider.nrepl :refer (cider-nrepl-handler)])
+
+
+
+;;and to the -main function add:
+(defn -main
+  ...
+  (nrepl-server/start-server :port 7888 :handler cider-nrepl-handler)
+  ...)
+#+END_SRC
+
+** starting app and all
+
+first:   lein run
+next: M-x cider-connect-clj    localhost 7888
+
+In cider nrepl:
+
+(require '[spheres.db.core :refer :all])
+(mount.core/start #'spheres.db.core/*db*)
+(in-ns 'spheres.db.core)
+
+
+
+
+** what if I don't shut down properly
+
+if the port remains busy for not closing the connection:
+
+#+BEGIN_SRC shell
+ss -ln
+!that gives the list of ports
+!find the port to see if it is listening
+!then:
+sudo fuser 47480/tcp 
+!or whatever port spheres.core directs to for nrepl (7888 or whatever)
+! the fuser command gives the process number
+!kill that process
+kill -9 <process number>
+#+END_SRC
+
+** adding queries to queries.sql
+#+name: spheres/resources/sql/queries.sql
+#+BEGIN_SRC sql
+-- :name get-bodies :? :*
+-- find all the bodies
+SELECT * FROM bodies
+#+END_SRC
+
+then the repl needs to re-read the queries file:
+
+#+BEGIN_SRC clojure
+(conman.core/bind-connection *db* "sql/queries.sql")
+
+#+END_SRC
+
+Now the get-bodies function in there, but the data is not (yet...)
+
+** organizing the data
+
+I chose records as there's a nice example by Alex Miller in Clojure
+Applied.
+
+*new ns:*
+
+#+BEGIN_SRC clojure
+(ns spheres.records
+  (:require [spheres.db.core :as db]
+            [clj-time.jdbc]
+            [clojure.java.jdbc :as jdbc]
+            [net.cgrand.enlive-html :as html]
+            [org.httpkit.client :as http]))
+
+#+END_SRC
+
+enlive and http-kit are there for scraping that will come later.
+
+the Body record definition, followed by a Body record: earth
+
+#+BEGIN_SRC clojure
+(defrecord Body [name
+                   volume        ; km³
+                   apoapsis      ; km, farthest from sun
+                   periapsis     ; km, closest to sun
+                   mass          ; kg
+                   surface_area  ; km²
+                   satelites     ; int
+                   circumference ; km
+                   form          ; (star, planet, dwarf-planet, moon, astroid)
+                   orbital_period; days
+                   parent        ; name
+                   ])
+
+(def earth
+  (->Body  "Earth" "1.08321e12" "152098232" "147098290" "5.97219e24"
+            "510072000" 1 "40075.017" "planet" "365.256363004" "Sun" ))
+
+#+END_SRC
+
+** db connectivity
+
+In ns spheres.records require config.core
+
+#+BEGIN_SRC clojure
+(ns spheres.records
+  (:require ...
+            [spheres.config :refer [env]]
+            ...))
+
+;; the db directing to env in spheres.config
+;; which in dev environment is dev-config.edn
+
+(def db (:database-url env))
+
+;; an insert record function:
+ 
+(defn insert-body-record! [body-record]
+  (jdbc/insert! db :bodies
+                (keys body-record)
+                (vals body-record)))
+
+
+
+
+#+END_SRC
+
+
+** HugSQL add to db
+
+create add-body! function
+that makes a row out of a record.
+
+#+BEGIN_SRC sql
+
+-- :name add-body! :! :1
+-- :doc adds a new body
+INSERT INTO bodies
+(name, volume, apoapsis, periapsis, mass, surface_area, satelites, circumference, form, orbital_period, parent)
+VALUES (:name, :volume, :apoapsis, :periapsis, :mass, :surface_area, :satelites, :circumference, :form, :orbital_period, :parent);
+
+#+END_SRC
+
+#+BEGIN_SRC clojure
+(add-body! earth)
+(add-body! venus)
+#+END_SRC
+
+#+begin_src sql :engine postgresql :dbhost localhost :dbuser admin :dbpassword admin :database spheres_db
+select * from bodies;
+#+END_SRC
+
+#+RESULTS:
+| name  |     volume |    apoapsis |  periapsis |       mass | surface_area | satelites | circumference | form   | orbital_period | parent |
+|-------+------------+-------------+-------------+------------+--------------+-----------+---------------+--------+----------------+--------|
+| Earth | 1.08321e12 |   152098232 |   147098290 | 5.97219e24 |    510072000 |         1 |     40075.017 | planet |  365.256363004 | Sun    |
+| Venus |  9.2843e11 | 108,939,000 | 107,477,000 |  4.8675e24 |     4.6023e8 |         0 |         38025 | planet |        224.701 | Sun    |
+
+Both functions add-body and insert-body-record return an exception
+when trying to insert a record that already exists
+
+** TODO look at scraping data
+
+** TODO look at getting the repl commands for startup in the -main function.
+
+** Overtone
+
+make an overtone namespace: spheres.sounds:
+
+#+BEGIN_SRC clojure
+(ns spheres.sounds
+  (:require [spheres.config :refer [env]]
+            [clj-time.jdbc]
+            [clojure.java.jdbc :as jdbc]
+            [spheres.records :refer :all] ;need to look at how to not use all
+            [spheres.db.core :refer :all]
+            [overtone.live :refer :all]))
+
+(def db (:database-url env))
+#+END_SRC
+
+defining the db, requiring overtone, spheres.records, spheres.config
+and spheres.db.core
+
+Next define some vars to play with:
+#+BEGIN_SRC clojure
+(def earth-mass (Double/parseDouble (:mass (get-body {:name "Earth"}))))
+(def venus-mass (Double/parseDouble (:mass (get-body {:name "Venus"}))))
+
+;;and try it out:
+
+(definst sin-wave-earth [freq (/ earth-mass 10000000000000000000000) attack earth-mass sustain 0.4 release 0.1 vol 0.4] 
+  (* (env-gen (lin attack sustain release) 1 1 0 1 FREE)
+     (sin-osc freq)
+     vol))
+#+END_SRC 
+
+The numbers are really big so the need to be divided while
+keeping the ratio between the bodies.
+
+** First Thing's First. extracting data from db 
+
+Need to convert the data from the db to a record again This is
+just an exercise, there is no real point in connverting back and
+forth, the db idea is in order to be able to expand.
+
+so a row from the database looks like this:
+#+BEGIN_SRC clojure :results value 
+(first (get-bodies))
+#+END_SRC
+
+#+RESULTS:
+| :mass | 5.97219e24 | :parent | Sun | :orbital_period | 365.256363004 | :name | Earth | :satelites | 1 | :circumference | 40075.017 | :volume | 1.08321e12 | :periapsis | 147098290 | :surface_area | 510072000 | :form | planet | :apoapsis | 152098232 |
+
+first thing, extract a row by the value of the name:
+
+#+BEGIN_SRC clojure
+;;a wrapper for the wrapper:
+(defn get-row [body]
+  (spheres.db.core/get-body {:name (clojure.string/capitalize body)}))
+
+#+END_SRC
+
+
+Now to extract whatever field:
+#+BEGIN_SRC clojure
+(defn get-data [body attr]
+  "expects two strings first for body second for the attribute"
+  (let [b (clojure.string/capitalize body)
+        a (-> attr keyword)]
+    (let [result (a (get-body {:name b}))]
+      (if (int? result)
+        result
+        (if (double? (try (Double/parseDouble result)
+                          (catch java.lang.NumberFormatException
+                              result)))
+             (Double/parseDouble result)
+             result)))))
+
+#+END_SRC
+
+** Migrating
+
+*updating the table* 
+
+I started using the term perihelion and aphelion but discovered aren't
+useful for moons so I had to rewrite the queries.sql with new
+keywords: apoapsis and periapsis.
+
+I added the dependency for migration and defined "opts" in
+sphere.records:
+#+BEGIN_SRC clojure
+(ns spheres.records
+  (:require [...
+             [luminus-migrations.core :refer [migrate]
+              ...]
+
+
+(def opts {:database-url "postgresql://localhost/spheres_db?user=admin&password=admin"})
+
+#+END_SRC
+
+Then run migrate in repl:
+#+BEGIN_SRC clojure
+(migrate ["reset"] opts)
+;;and
+(migrate ["migrate"] opts)
+#+END_SRC
+ after that need to repopulate the table.
+
+*** TODO find out how to assoc to the table columns without losing the data.
+In order to later add new columns like inclination and garvity and
+density.
+
+** Maths
+
+Next is some maths.  I will start exploring the numbers, the idea
+is to draw correlations and demonstrate what happens over time.
+
+** get the map on html using Selmer
+write the parsing functions in spheres.layout
+
+
+** Plotting
+I think the best way will be with d3 using clojurescript.
+So I'll need to setup the project for cljs.
+ 
+

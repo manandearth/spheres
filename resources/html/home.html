@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- columns -->
+<div>
+  <table style="width:100%">
+    <tr>
+      {% for item in items %}
+      <th>
+	{{item}}
+      </th>
+      {% endfor %}
+    </tr>
+   
+</div>
+<!-- rows -->
+<div>
+  {% for item in map %} <tr>
+    <td>{{item.name}}</td>
+    <td>{{item.volume}}</td>
+    <td>{{item.apoapsis}}</td>
+    <td>{{item.periapsis}}</td>
+    <td>{{item.mass}}</td>
+    <td>{{item.surface_area}}</td>
+    <td>{{item.satelites}}</td>
+    <td>{{item.circumference}}</td>
+    <td>{{item.form}}</td>
+    <td>{{item.orbital_period}}</td>
+    <td>{{item.parent}}</td>
+  </tr> {% endfor %}
+</div>
+<!-- here comes the search: -->
+<div class="row">
+  <div class="span12">
+    <form method="POST" action="/search">
+      <div class="form-group">
+        {% csrf-field %}
+        <p>
+          Body to inspect:
+          <input class="form-control"
+                 type="text"
+                 name="name"
+                 value="" />
+        </p>
+        <input type="submit" class="btn btn-primary" value="show" />
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+

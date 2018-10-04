@@ -1,0 +1,1581 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f4b7e3db0dc, pid=1669, tid=0x00007f4b7964b700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_172-b11) (build 1.8.0_172-b11)
+# Java VM: OpenJDK 64-Bit Server VM (25.172-b11 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libscsynth.so+0x220dc]  SC_UdpInPort::SC_UdpInPort(World*, int)+0x9c
+#
+# Core dump written. Default location: /home/adam/clojure-projects/spheres/core or core.1669
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f4b80048000):  JavaThread "Thread-12" daemon [_thread_in_native, id=1780, stack(0x00007f4b7954b000,0x00007f4b7964c000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000160
+
+Registers:
+RAX=0x0000000000000001, RBX=0x00007f4bd01183d0, RCX=0x0000000000000000, RDX=0x0000000000000001
+RSP=0x00007f4b79649a60, RBP=0x0000000000000000, RSI=0x0000000000000001, RDI=0x0000000000000703
+R8 =0x0000000000000000, R9 =0x00007f4b5d103700, R10=0x00007f4b5d1039d0, R11=0x0000000000000246
+R12=0x0000000000000000, R13=0xfffffffffffffffc, R14=0x0000000000000002, R15=0x00007f4bd00151c0
+RIP=0x00007f4b7e3db0dc, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f4b79649a60)
+0x00007f4b79649a60:   0000000000000000 0000000000000000
+0x00007f4b79649a70:   0000000000000000 0000000000000000
+0x00007f4b79649a80:   000000000000e16f 0000000000010000
+0x00007f4b79649a90:   00007f4bd01183d0 00007f4bd01183d0
+0x00007f4b79649aa0:   000000000000e16f 00007f4b7e3f1492
+0x00007f4b79649ab0:   00007f4bd0015268 00007f4b79649ad0
+0x00007f4b79649ac0:   0000000000000001 00007f4b7e6517a0
+0x00007f4b79649ad0:   000000000000000a 00007f4b7964a680
+0x00007f4b79649ae0:   00007f4b79649bc0 00007f4b7e65129b
+0x00007f4b79649af0:   00007f4b79649b40 00007f4c1c2770a7
+0x00007f4b79649b00:   00007f4b79649a20 00007f4b7964a5e0
+0x00007f4b79649b10:   00007f4b79649b8c 00007f4b79649b88
+0x00007f4b79649b20:   00007f4b79649b70 00007f4b7964a4f0
+0x00007f4b79649b30:   00007f4b7964a680 00007f4b7e3f1460
+0x00007f4b79649b40:   00007f4b79649ad0 00007f4bd0015260
+0x00007f4b79649b50:   0000000280de0ba8 0000000200000000
+0x00007f4b79649b60:   0000000100000002 00007f4b79649b74
+0x00007f4b79649b70:   00007f4b00000002 00007f4b80048000
+0x00007f4b79649b80:   0000000000000004 0000000100000000
+0x00007f4b79649b90:   0000000000000001 0000000000000000
+0x00007f4b79649ba0:   0000000000000004 0000000000000000
+0x00007f4b79649bb0:   0000000000000001 0000000000000002
+0x00007f4b79649bc0:   00007f4b7964a4d0 00007f4b7e64691d
+0x00007f4b79649bd0:   00007f4b80de0b18 00007f4b80048000
+0x00007f4b79649be0:   0000000000000001 00007f4b7e646672
+0x00007f4b79649bf0:   0000000000000000 0000000000000000
+0x00007f4b79649c00:   00007f4b79649c40 00007f4b7e64663d
+0x00007f4b79649c10:   0000000000000000 0000000000000000
+0x00007f4b79649c20:   00007f4b79649ca0 00007f4c1c27d17d
+0x00007f4b79649c30:   0000000101e27e58 00007f4bd00151e0
+0x00007f4b79649c40:   00007f4b80048000 00007f4b800481e0
+0x00007f4b79649c50:   00007f4bd00151c0 00007f4b7964a680 
+
+Instructions: (pc=0x00007f4b7e3db0dc)
+0x00007f4b7e3db0bc:   66 c1 c8 08 c7 43 24 00 00 00 00 66 89 43 22 e8
+0x00007f4b7e3db0cc:   50 e2 ff ff 85 c0 78 2d 48 89 df e8 64 dd ff ff
+0x00007f4b7e3db0dc:   80 bd 60 01 00 00 00 74 15 48 8b 15 a4 1c 24 00
+0x00007f4b7e3db0ec:   48 8d 7b 30 48 89 d9 31 f6 e8 26 cf ff ff 48 83 
+
+Register to memory mapping:
+
+RAX=0x0000000000000001 is an unknown value
+RBX=0x00007f4bd01183d0 is an unknown value
+RCX=0x0000000000000000 is an unknown value
+RDX=0x0000000000000001 is an unknown value
+RSP=0x00007f4b79649a60 is pointing into the stack for thread: 0x00007f4b80048000
+RBP=0x0000000000000000 is an unknown value
+RSI=0x0000000000000001 is an unknown value
+RDI=0x0000000000000703 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x00007f4b5d103700 is an unknown value
+R10=0x00007f4b5d1039d0 is an unknown value
+R11=0x0000000000000246 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0xfffffffffffffffc is an unknown value
+R14=0x0000000000000002 is an unknown value
+R15=0x00007f4bd00151c0 is an unknown value
+
+
+Stack: [0x00007f4b7954b000,0x00007f4b7964c000],  sp=0x00007f4b79649a60,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libscsynth.so+0x220dc]  SC_UdpInPort::SC_UdpInPort(World*, int)+0x9c
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  overtone.sc.machinery.server.native.lib_8d456141_6ac9_48a6_bf22_2d0ba482a0ba.World_OpenUDP(Lcom/sun/jna/Pointer;I)I+0
+j  overtone.sc.machinery.server.native$eval27498$fn__27499.invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+17
+j  overtone.sc.machinery.server.native$scsynth_listen_udp.invokeStatic(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+55
+j  overtone.sc.machinery.server.native$scsynth_listen_udp.invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  overtone.sc.machinery.server.connection$internal_booter.invokeStatic(Ljava/lang/Object;)Ljava/lang/Object;+201
+j  overtone.sc.machinery.server.connection$internal_booter.invoke(Ljava/lang/Object;)Ljava/lang/Object;+3
+j  overtone.sc.machinery.server.connection$boot_internal_server$fn__27595.invoke()Ljava/lang/Object;+15
+j  clojure.lang.AFn.run()V+1
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x00007f4b80048000 JavaThread "Thread-12" daemon [_thread_in_native, id=1780, stack(0x00007f4b7954b000,0x00007f4b7964c000)]
+  0x00007f4b80989000 JavaThread "pool-2-thread-6" [_thread_blocked, id=1779, stack(0x00007f4b7a73e000,0x00007f4b7a83f000)]
+  0x00007f4b80988800 JavaThread "pool-2-thread-5" [_thread_blocked, id=1778, stack(0x00007f4b7a83f000,0x00007f4b7a940000)]
+  0x00007f4b80ba2800 JavaThread "pool-2-thread-4" [_thread_blocked, id=1777, stack(0x00007f4b7a940000,0x00007f4b7aa41000)]
+  0x00007f4b80992000 JavaThread "pool-2-thread-3" [_thread_blocked, id=1776, stack(0x00007f4b7aa41000,0x00007f4b7ab42000)]
+  0x00007f4b80957800 JavaThread "pool-2-thread-2" [_thread_blocked, id=1775, stack(0x00007f4b7ad42000,0x00007f4b7ae43000)]
+  0x00007f4b808e6800 JavaThread "pool-2-thread-1" [_thread_blocked, id=1774, stack(0x00007f4b7ae43000,0x00007f4b7af44000)]
+  0x00007f4b9c001800 JavaThread "pool-3-thread-6" [_thread_blocked, id=1773, stack(0x00007f4b7af44000,0x00007f4b7b045000)]
+  0x00007f4b94008000 JavaThread "pool-3-thread-5" [_thread_blocked, id=1772, stack(0x00007f4b7b245000,0x00007f4b7b346000)]
+  0x00007f4ba0001800 JavaThread "pool-3-thread-4" [_thread_blocked, id=1771, stack(0x00007f4b7b346000,0x00007f4b7b447000)]
+  0x00007f4b94002800 JavaThread "pool-3-thread-3" [_thread_blocked, id=1770, stack(0x00007f4b7b447000,0x00007f4b7b548000)]
+  0x00007f4b94003800 JavaThread "pool-3-thread-2" [_thread_blocked, id=1769, stack(0x00007f4b7b748000,0x00007f4b7b849000)]
+  0x00007f4b807a1800 JavaThread "pool-3-thread-1" [_thread_blocked, id=1768, stack(0x00007f4b7b849000,0x00007f4b7b94a000)]
+  0x00007f4b80606000 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=1766, stack(0x00007f4b7ed57000,0x00007f4b7ee58000)]
+  0x00007f4b805e5800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1765, stack(0x00007f4b7f268000,0x00007f4b7f369000)]
+  0x00007f4b8030f800 JavaThread "client-worker-2" daemon [_thread_blocked, id=1764, stack(0x00007f4b8a100000,0x00007f4b8a201000)]
+  0x00007f4b804cf000 JavaThread "client-worker-1" daemon [_thread_blocked, id=1762, stack(0x00007f4b8a201000,0x00007f4b8a302000)]
+  0x00007f4b8013d800 JavaThread "client-loop" daemon [_thread_in_native, id=1761, stack(0x00007f4bc8097000,0x00007f4bc8198000)]
+  0x00007f4bb4006000 JavaThread "clojure-agent-send-off-pool-6" [_thread_blocked, id=1760, stack(0x00007f4b8bbfe000,0x00007f4b8bcff000)]
+  0x00007f4b84006800 JavaThread "nREPL-worker-0" daemon [_thread_blocked, id=1738, stack(0x00007f4b8beff000,0x00007f4b8c000000)]
+  0x00007f4bc4006800 JavaThread "clojure-agent-send-off-pool-3" [_thread_in_native, id=1736, stack(0x00007f4bc8198000,0x00007f4bc8299000)]
+  0x00007f4bc4004000 JavaThread "clojure-agent-send-off-pool-2" [_thread_blocked, id=1735, stack(0x00007f4bc92c0000,0x00007f4bc93c1000)]
+  0x00007f4c14011000 JavaThread "DestroyJavaVM" [_thread_blocked, id=1670, stack(0x00007f4c1dacb000,0x00007f4c1dbcb000)]
+  0x00007f4c15815800 JavaThread "clojure-agent-send-off-pool-1" [_thread_in_native, id=1718, stack(0x00007f4bc8299000,0x00007f4bc839a000)]
+  0x00007f4c15973000 JavaThread "XNIO-1 Accept" [_thread_in_native, id=1717, stack(0x00007f4bc839a000,0x00007f4bc849b000)]
+  0x00007f4c15971800 JavaThread "XNIO-1 I/O-8" [_thread_in_native, id=1716, stack(0x00007f4bc849b000,0x00007f4bc859c000)]
+  0x00007f4c15970000 JavaThread "XNIO-1 I/O-7" [_thread_in_native, id=1715, stack(0x00007f4bc859c000,0x00007f4bc869d000)]
+  0x00007f4c145f1000 JavaThread "XNIO-1 I/O-6" [_thread_in_native, id=1714, stack(0x00007f4bc869d000,0x00007f4bc879e000)]
+  0x00007f4c145ef800 JavaThread "XNIO-1 I/O-5" [_thread_in_native, id=1713, stack(0x00007f4bc879e000,0x00007f4bc889f000)]
+  0x00007f4c15720800 JavaThread "XNIO-1 I/O-4" [_thread_in_native, id=1712, stack(0x00007f4bc889f000,0x00007f4bc89a0000)]
+  0x00007f4c1571f000 JavaThread "XNIO-1 I/O-3" [_thread_in_native, id=1711, stack(0x00007f4bc89a0000,0x00007f4bc8aa1000)]
+  0x00007f4c1571d800 JavaThread "XNIO-1 I/O-2" [_thread_in_native, id=1710, stack(0x00007f4bc8aa1000,0x00007f4bc8ba2000)]
+  0x00007f4c15d58000 JavaThread "XNIO-1 I/O-1" [_thread_in_native, id=1709, stack(0x00007f4bc8ba2000,0x00007f4bc8ca3000)]
+  0x00007f4c15694000 JavaThread "HikariPool-1 housekeeper" daemon [_thread_blocked, id=1698, stack(0x00007f4bc93c1000,0x00007f4bc94c2000)]
+  0x00007f4c1589b000 JavaThread "PostgreSQL-JDBC-SharedTimer-1" daemon [_thread_blocked, id=1697, stack(0x00007f4bc94c2000,0x00007f4bc95c3000)]
+  0x00007f4c14924800 JavaThread "clojure-agent-send-off-pool-0" [_thread_in_native, id=1695, stack(0x00007f4bf40df000,0x00007f4bf41e0000)]
+  0x00007f4c140d0000 JavaThread "Service Thread" daemon [_thread_blocked, id=1687, stack(0x00007f4c04a5e000,0x00007f4c04b5f000)]
+  0x00007f4c140c5000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=1686, stack(0x00007f4c04b60000,0x00007f4c04c60000)]
+  0x00007f4c140c3000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=1685, stack(0x00007f4c04c61000,0x00007f4c04d61000)]
+  0x00007f4c140c0800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=1684, stack(0x00007f4c04d62000,0x00007f4c04e62000)]
+  0x00007f4c140be800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1683, stack(0x00007f4c18075000,0x00007f4c18176000)]
+  0x00007f4c1408a800 JavaThread "Finalizer" daemon [_thread_blocked, id=1682, stack(0x00007f4c18176000,0x00007f4c18277000)]
+  0x00007f4c14086000 JavaThread "Reference Handler" daemon [_thread_blocked, id=1681, stack(0x00007f4c18277000,0x00007f4c18378000)]
+
+Other Threads:
+  0x00007f4c1407e800 VMThread [stack: 0x00007f4c18379000,0x00007f4c18479000] [id=1680]
+  0x00007f4c140d3000 WatcherThread [stack: 0x00007f4c0495e000,0x00007f4c04a5e000] [id=1688]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 561664K, used 112388K [0x00000000d7f00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 532480K, 15% used [0x00000000d7f00000,0x00000000dd151b80,0x00000000f8700000)
+  from space 29184K, 96% used [0x00000000f8700000,0x00000000fa26f6b8,0x00000000fa380000)
+  to   space 33280K, 0% used [0x00000000fdf80000,0x00000000fdf80000,0x0000000100000000)
+ ParOldGen       total 230400K, used 60306K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6e4b08,0x0000000095d00000)
+ Metaspace       used 96750K, capacity 133058K, committed 133184K, reserved 1144832K
+  class space    used 25927K, capacity 38498K, committed 38528K, reserved 1048576K
+
+Card table byte_map: [0x00007f4c1a8c6000,0x00007f4c1ac89000] byte_map_base: 0x00007f4c1a488000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f4c1cdb7140
+ Begin Bits: [0x00007f4bf43e0000, 0x00007f4bf61f0000)
+ End Bits:   [0x00007f4bf61f0000, 0x00007f4bf8000000)
+
+Polling page: 0x00007f4c1dbfb000
+
+CodeCache: size=245760Kb used=24687Kb max_used=24955Kb free=221072Kb
+ bounds [0x00007f4c05000000, 0x00007f4c06880000, 0x00007f4c14000000]
+ total_blobs=5992 nmethods=5370 adapters=536
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 240,758 Thread 0x00007f4c140c5000 7563       3       java.util.HashMap::removeNode (291 bytes)
+Event: 240,759 Thread 0x00007f4c140c5000 nmethod 7563 0x00007f4c05444d90 code [0x00007f4c05444fe0, 0x00007f4c054461f8]
+Event: 240,900 Thread 0x00007f4c140c5000 7564       3       java.util.concurrent.ThreadPoolExecutor::runStateOf (5 bytes)
+Event: 240,900 Thread 0x00007f4c140c5000 nmethod 7564 0x00007f4c054bc450 code [0x00007f4c054bc5a0, 0x00007f4c054bc6d0]
+Event: 241,900 Thread 0x00007f4c140c5000 7565       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::compareAndSetWaitStatus (13 bytes)
+Event: 241,900 Thread 0x00007f4c140c5000 nmethod 7565 0x00007f4c05444a90 code [0x00007f4c05444be0, 0x00007f4c05444d30]
+Event: 246,400 Thread 0x00007f4c140c3000 7566       4       java.lang.Thread::interrupted (8 bytes)
+Event: 246,400 Thread 0x00007f4c140c3000 nmethod 7566 0x00007f4c055ca7d0 code [0x00007f4c055ca920, 0x00007f4c055ca9a8]
+Event: 246,863 Thread 0x00007f4c140c5000 7567       3       clojure.lang.Numbers$BigIntOps::combine (8 bytes)
+Event: 246,863 Thread 0x00007f4c140c5000 nmethod 7567 0x00007f4c05b75510 code [0x00007f4c05b75680, 0x00007f4c05b758a8]
+
+GC Heap History (10 events):
+Event: 236,561 GC heap before
+{Heap before GC invocations=21 (full 4):
+ PSYoungGen      total 458240K, used 435156K [0x00000000d7f00000, 0x00000000f5b80000, 0x0000000100000000)
+  eden space 430592K, 100% used [0x00000000d7f00000,0x00000000f2380000,0x00000000f2380000)
+  from space 27648K, 16% used [0x00000000f3e80000,0x00000000f42f53d0,0x00000000f5980000)
+  to   space 27648K, 0% used [0x00000000f2380000,0x00000000f2380000,0x00000000f3e80000)
+ ParOldGen       total 230400K, used 60255K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6d7eb8,0x0000000095d00000)
+ Metaspace       used 84199K, capacity 112686K, committed 112832K, reserved 1130496K
+  class space    used 22091K, capacity 32146K, committed 32256K, reserved 1048576K
+Event: 236,576 GC heap after
+Heap after GC invocations=21 (full 4):
+ PSYoungGen      total 458240K, used 11571K [0x00000000d7f00000, 0x00000000f7900000, 0x0000000100000000)
+  eden space 430592K, 0% used [0x00000000d7f00000,0x00000000d7f00000,0x00000000f2380000)
+  from space 27648K, 41% used [0x00000000f2380000,0x00000000f2eccf18,0x00000000f3e80000)
+  to   space 26112K, 0% used [0x00000000f5f80000,0x00000000f5f80000,0x00000000f7900000)
+ ParOldGen       total 230400K, used 60274K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6dcb08,0x0000000095d00000)
+ Metaspace       used 84199K, capacity 112686K, committed 112832K, reserved 1130496K
+  class space    used 22091K, capacity 32146K, committed 32256K, reserved 1048576K
+}
+Event: 237,241 GC heap before
+{Heap before GC invocations=22 (full 4):
+ PSYoungGen      total 458240K, used 442163K [0x00000000d7f00000, 0x00000000f7900000, 0x0000000100000000)
+  eden space 430592K, 100% used [0x00000000d7f00000,0x00000000f2380000,0x00000000f2380000)
+  from space 27648K, 41% used [0x00000000f2380000,0x00000000f2eccf18,0x00000000f3e80000)
+  to   space 26112K, 0% used [0x00000000f5f80000,0x00000000f5f80000,0x00000000f7900000)
+ ParOldGen       total 230400K, used 60274K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6dcb08,0x0000000095d00000)
+ Metaspace       used 85364K, capacity 114406K, committed 114496K, reserved 1130496K
+  class space    used 22543K, capacity 32874K, committed 32896K, reserved 1048576K
+Event: 237,254 GC heap after
+Heap after GC invocations=22 (full 4):
+ PSYoungGen      total 492032K, used 14477K [0x00000000d7f00000, 0x00000000f8280000, 0x0000000100000000)
+  eden space 465920K, 0% used [0x00000000d7f00000,0x00000000d7f00000,0x00000000f4600000)
+  from space 26112K, 55% used [0x00000000f5f80000,0x00000000f6da3618,0x00000000f7900000)
+  to   space 26112K, 0% used [0x00000000f4600000,0x00000000f4600000,0x00000000f5f80000)
+ ParOldGen       total 230400K, used 60282K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6deb08,0x0000000095d00000)
+ Metaspace       used 85364K, capacity 114406K, committed 114496K, reserved 1130496K
+  class space    used 22543K, capacity 32874K, committed 32896K, reserved 1048576K
+}
+Event: 237,745 GC heap before
+{Heap before GC invocations=23 (full 4):
+ PSYoungGen      total 492032K, used 480397K [0x00000000d7f00000, 0x00000000f8280000, 0x0000000100000000)
+  eden space 465920K, 100% used [0x00000000d7f00000,0x00000000f4600000,0x00000000f4600000)
+  from space 26112K, 55% used [0x00000000f5f80000,0x00000000f6da3618,0x00000000f7900000)
+  to   space 26112K, 0% used [0x00000000f4600000,0x00000000f4600000,0x00000000f5f80000)
+ ParOldGen       total 230400K, used 60282K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6deb08,0x0000000095d00000)
+ Metaspace       used 86135K, capacity 115762K, committed 115904K, reserved 1132544K
+  class space    used 22795K, capacity 33266K, committed 33280K, reserved 1048576K
+Event: 237,766 GC heap after
+Heap after GC invocations=23 (full 4):
+ PSYoungGen      total 492032K, used 17943K [0x00000000d7f00000, 0x00000000fbd80000, 0x0000000100000000)
+  eden space 465920K, 0% used [0x00000000d7f00000,0x00000000d7f00000,0x00000000f4600000)
+  from space 26112K, 68% used [0x00000000f4600000,0x00000000f5785d18,0x00000000f5f80000)
+  to   space 26624K, 0% used [0x00000000fa380000,0x00000000fa380000,0x00000000fbd80000)
+ ParOldGen       total 230400K, used 60290K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6e0b08,0x0000000095d00000)
+ Metaspace       used 86135K, capacity 115762K, committed 115904K, reserved 1132544K
+  class space    used 22795K, capacity 33266K, committed 33280K, reserved 1048576K
+}
+Event: 238,924 GC heap before
+{Heap before GC invocations=24 (full 4):
+ PSYoungGen      total 492032K, used 483863K [0x00000000d7f00000, 0x00000000fbd80000, 0x0000000100000000)
+  eden space 465920K, 100% used [0x00000000d7f00000,0x00000000f4600000,0x00000000f4600000)
+  from space 26112K, 68% used [0x00000000f4600000,0x00000000f5785d18,0x00000000f5f80000)
+  to   space 26624K, 0% used [0x00000000fa380000,0x00000000fa380000,0x00000000fbd80000)
+ ParOldGen       total 230400K, used 60290K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6e0b08,0x0000000095d00000)
+ Metaspace       used 89837K, capacity 121464K, committed 121664K, reserved 1136640K
+  class space    used 23856K, capacity 34927K, committed 34944K, reserved 1048576K
+Event: 238,945 GC heap after
+Heap after GC invocations=24 (full 4):
+ PSYoungGen      total 559104K, used 22353K [0x00000000d7f00000, 0x00000000fc200000, 0x0000000100000000)
+  eden space 532480K, 0% used [0x00000000d7f00000,0x00000000d7f00000,0x00000000f8700000)
+  from space 26624K, 83% used [0x00000000fa380000,0x00000000fb954708,0x00000000fbd80000)
+  to   space 29184K, 0% used [0x00000000f8700000,0x00000000f8700000,0x00000000fa380000)
+ ParOldGen       total 230400K, used 60298K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6e2b08,0x0000000095d00000)
+ Metaspace       used 89837K, capacity 121464K, committed 121664K, reserved 1136640K
+  class space    used 23856K, capacity 34927K, committed 34944K, reserved 1048576K
+}
+Event: 240,507 GC heap before
+{Heap before GC invocations=25 (full 4):
+ PSYoungGen      total 559104K, used 554833K [0x00000000d7f00000, 0x00000000fc200000, 0x0000000100000000)
+  eden space 532480K, 100% used [0x00000000d7f00000,0x00000000f8700000,0x00000000f8700000)
+  from space 26624K, 83% used [0x00000000fa380000,0x00000000fb954708,0x00000000fbd80000)
+  to   space 29184K, 0% used [0x00000000f8700000,0x00000000f8700000,0x00000000fa380000)
+ ParOldGen       total 230400K, used 60298K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6e2b08,0x0000000095d00000)
+ Metaspace       used 95969K, capacity 131886K, committed 132032K, reserved 1142784K
+  class space    used 25682K, capacity 38111K, committed 38144K, reserved 1048576K
+Event: 240,533 GC heap after
+Heap after GC invocations=25 (full 4):
+ PSYoungGen      total 561664K, used 28093K [0x00000000d7f00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 532480K, 0% used [0x00000000d7f00000,0x00000000d7f00000,0x00000000f8700000)
+  from space 29184K, 96% used [0x00000000f8700000,0x00000000fa26f6b8,0x00000000fa380000)
+  to   space 33280K, 0% used [0x00000000fdf80000,0x00000000fdf80000,0x0000000100000000)
+ ParOldGen       total 230400K, used 60306K [0x0000000087c00000, 0x0000000095d00000, 0x00000000d7f00000)
+  object space 230400K, 26% used [0x0000000087c00000,0x000000008b6e4b08,0x0000000095d00000)
+ Metaspace       used 95969K, capacity 131886K, committed 132032K, reserved 1142784K
+  class space    used 25682K, capacity 38111K, committed 38144K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 240,613 Thread 0x00007f4b84006800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4c059afdd8 method=clojure.lang.ChunkedCons.chunkedNext()Lclojure/lang/ISeq; @ 4
+Event: 240,620 Thread 0x00007f4b84006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f4c06843860 method=clojure.lang.Reflector.paramArgTypeMatch(Ljava/lang/Class;Ljava/lang/Class;)Z @ 91
+Event: 240,621 Thread 0x00007f4b84006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f4c067c2900 method=clojure.lang.Reflector.paramArgTypeMatch(Ljava/lang/Class;Ljava/lang/Class;)Z @ 118
+Event: 240,659 Thread 0x00007f4b84006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f4c0589b798 method=clojure.lang.Compiler.resolveIn(Lclojure/lang/Namespace;Lclojure/lang/Symbol;Z)Ljava/lang/Object; @ 198
+Event: 240,747 Thread 0x00007f4b84006800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4c059c97fc method=clojure.lang.Numbers$LongOps.combine(Lclojure/lang/Numbers$Ops;)Lclojure/lang/Numbers$Ops; @ 2
+Event: 240,747 Thread 0x00007f4b84006800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4c059bb9f0 method=clojure.lang.RT.longCast(Ljava/lang/Object;)J @ 8
+Event: 240,748 Thread 0x00007f4b84006800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4c059c97fc method=clojure.lang.Numbers$LongOps.combine(Lclojure/lang/Numbers$Ops;)Lclojure/lang/Numbers$Ops; @ 2
+Event: 240,749 Thread 0x00007f4b84006800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4c059bb9f0 method=clojure.lang.RT.longCast(Ljava/lang/Object;)J @ 8
+Event: 240,756 Thread 0x00007f4b80048000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f4c06655800 method=java.lang.Class.cast(Ljava/lang/Object;)Ljava/lang/Object; @ 1
+Event: 240,849 Thread 0x00007f4b84006800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4c059c97fc method=clojure.lang.Numbers$LongOps.combine(Lclojure/lang/Numbers$Ops;)Lclojure/lang/Numbers$Ops; @ 2
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 234,229 Thread 0x00007f4b84006800 Exception <a 'java/io/FileNotFoundException'> (0x00000000d80616e8) thrown at [/build/java8-openjdk/src/jdk8u-jdk8u172-b11/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 234,249 Thread 0x00007f4b84006800 Exception <a 'java/lang/ClassNotFoundException': sun/dc/DuctusRenderingEngine> (0x00000000d807b4e0) thrown at [/build/java8-openjdk/src/jdk8u-jdk8u172-b11/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 235,370 Thread 0x00007f4b84006800 Exception <a 'java/io/IOException'> (0x00000000e39392b8) thrown at [/build/java8-openjdk/src/jdk8u-jdk8u172-b11/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 237,666 Thread 0x00007f4b84006800 Implicit null exception at 0x00007f4c051d724c to 0x00007f4c051d8071
+Event: 237,856 Thread 0x00007f4bb4006000 Implicit null exception at 0x00007f4c06668f61 to 0x00007f4c0666954d
+Event: 237,857 Thread 0x00007f4bb4006000 Implicit null exception at 0x00007f4c06654e09 to 0x00007f4c06654e6d
+Event: 238,315 Thread 0x00007f4b84006800 Implicit null exception at 0x00007f4c0625b9ec to 0x00007f4c0625bac0
+Event: 238,315 Thread 0x00007f4b84006800 Implicit null exception at 0x00007f4c0658694f to 0x00007f4c06586a24
+Event: 240,543 Thread 0x00007f4b84006800 Implicit null exception at 0x00007f4c05c2240b to 0x00007f4c05c224cd
+Event: 240,756 Thread 0x00007f4b80048000 Implicit null exception at 0x00007f4c06655498 to 0x00007f4c066557ed
+
+Events (10 events):
+Event: 240,757 Executing VM operation: RevokeBias done
+Event: 240,757 Executing VM operation: RevokeBias
+Event: 240,757 Executing VM operation: RevokeBias done
+Event: 240,758 loading class com/sun/jna/Structure$2$StructureSet
+Event: 240,758 loading class com/sun/jna/Structure$2$StructureSet done
+Event: 240,758 loading class com/sun/jna/NativeString
+Event: 240,758 loading class com/sun/jna/NativeString done
+Event: 240,849 Thread 0x00007f4b84006800 Uncommon trap: trap_request=0xffffffde fr.pc=0x00007f4c059c97fc
+Event: 240,849 Thread 0x00007f4b84006800 DEOPT PACKING pc=0x00007f4c059c97fc sp=0x00007f4b8bffc0d0
+Event: 240,849 Thread 0x00007f4b84006800 DEOPT UNPACKING pc=0x00007f4c0504547a sp=0x00007f4b8bffc080 mode 2
+
+
+Dynamic libraries:
+87c00000-95d00000 rw-p 00000000 00:00 0 
+95d00000-d7f00000 ---p 00000000 00:00 0 
+d7f00000-100000000 rw-p 00000000 00:00 0 
+100000000-1025a0000 rw-p 00000000 00:00 0 
+1025a0000-140000000 ---p 00000000 00:00 0 
+556b5b061000-556b5b062000 r-xp 00000000 08:01 10500953                   /usr/lib/jvm/java-8-openjdk/jre/bin/java
+556b5b261000-556b5b262000 r--p 00000000 08:01 10500953                   /usr/lib/jvm/java-8-openjdk/jre/bin/java
+556b5b262000-556b5b263000 rw-p 00001000 08:01 10500953                   /usr/lib/jvm/java-8-openjdk/jre/bin/java
+556b5c7d0000-556b5d10f000 rw-p 00000000 00:00 0                          [heap]
+7f4b5c903000-7f4b5c904000 ---p 00000000 00:00 0 
+7f4b5c904000-7f4b5d104000 rw-p 00000000 00:00 0 
+7f4b5d104000-7f4b5d105000 ---p 00000000 00:00 0 
+7f4b5d105000-7f4b6d906000 rw-p 00000000 00:00 0 
+7f4b6d906000-7f4b6d909000 r-xp 00000000 08:01 8790115                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/SummerUGens.so
+7f4b6d909000-7f4b6db09000 ---p 00003000 08:01 8790115                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/SummerUGens.so
+7f4b6db09000-7f4b6db0a000 r--p 00003000 08:01 8790115                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/SummerUGens.so
+7f4b6db0a000-7f4b6db0b000 rw-p 00004000 08:01 8790115                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/SummerUGens.so
+7f4b6db0b000-7f4b6db0d000 r-xp 00000000 08:01 8790258                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/UnpackFFTUGens.so
+7f4b6db0d000-7f4b6dd0c000 ---p 00002000 08:01 8790258                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/UnpackFFTUGens.so
+7f4b6dd0c000-7f4b6dd0d000 r--p 00001000 08:01 8790258                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/UnpackFFTUGens.so
+7f4b6dd0d000-7f4b6dd0e000 rw-p 00002000 08:01 8790258                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/UnpackFFTUGens.so
+7f4b6dd0e000-7f4b6dd1a000 rw-p 00000000 00:00 0 
+7f4b6dd1a000-7f4b6dd22000 r-xp 00000000 08:01 8790117                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TJUGens.so
+7f4b6dd22000-7f4b6df21000 ---p 00008000 08:01 8790117                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TJUGens.so
+7f4b6df21000-7f4b6df22000 r--p 00007000 08:01 8790117                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TJUGens.so
+7f4b6df22000-7f4b6df23000 rw-p 00008000 08:01 8790117                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TJUGens.so
+7f4b6df23000-7f4b6df2d000 r-xp 00000000 08:01 8788257                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDFFTUGens.so
+7f4b6df2d000-7f4b6e12c000 ---p 0000a000 08:01 8788257                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDFFTUGens.so
+7f4b6e12c000-7f4b6e12d000 r--p 00009000 08:01 8788257                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDFFTUGens.so
+7f4b6e12d000-7f4b6e12e000 rw-p 0000a000 08:01 8788257                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDFFTUGens.so
+7f4b6e12e000-7f4b6e13a000 rw-p 00000000 00:00 0 
+7f4b6e13a000-7f4b6e140000 r-xp 00000000 08:01 8787946                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BBCut2UGens.so
+7f4b6e140000-7f4b6e33f000 ---p 00006000 08:01 8787946                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BBCut2UGens.so
+7f4b6e33f000-7f4b6e340000 r--p 00005000 08:01 8787946                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BBCut2UGens.so
+7f4b6e340000-7f4b6e342000 rw-p 00006000 08:01 8787946                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BBCut2UGens.so
+7f4b6e342000-7f4b6e353000 r-xp 00000000 08:01 8790250                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/OscUGens.so
+7f4b6e353000-7f4b6e552000 ---p 00011000 08:01 8790250                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/OscUGens.so
+7f4b6e552000-7f4b6e553000 r--p 00010000 08:01 8790250                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/OscUGens.so
+7f4b6e553000-7f4b6e554000 rw-p 00011000 08:01 8790250                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/OscUGens.so
+7f4b6e554000-7f4b6e558000 r-xp 00000000 08:01 8788193                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDBufferUGens.so
+7f4b6e558000-7f4b6e757000 ---p 00004000 08:01 8788193                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDBufferUGens.so
+7f4b6e757000-7f4b6e758000 r--p 00003000 08:01 8788193                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDBufferUGens.so
+7f4b6e758000-7f4b6e759000 rw-p 00004000 08:01 8788193                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDBufferUGens.so
+7f4b6e759000-7f4b6e76b000 r-xp 00000000 08:01 8787947                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BerlachUGens.so
+7f4b6e76b000-7f4b6e96a000 ---p 00012000 08:01 8787947                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BerlachUGens.so
+7f4b6e96a000-7f4b6e96b000 r--p 00011000 08:01 8787947                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BerlachUGens.so
+7f4b6e96b000-7f4b6e96c000 rw-p 00012000 08:01 8787947                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BerlachUGens.so
+7f4b6e96c000-7f4b6e96e000 r-xp 00000000 08:01 10231791                   /usr/lib/ladspa/filter.so
+7f4b6e96e000-7f4b6eb6d000 ---p 00002000 08:01 10231791                   /usr/lib/ladspa/filter.so
+7f4b6eb6d000-7f4b6eb6e000 r--p 00001000 08:01 10231791                   /usr/lib/ladspa/filter.so
+7f4b6eb6e000-7f4b6eb6f000 rw-p 00002000 08:01 10231791                   /usr/lib/ladspa/filter.so
+7f4b6eb6f000-7f4b6eb70000 r-xp 00000000 08:01 10231789                   /usr/lib/ladspa/amp.so
+7f4b6eb70000-7f4b6ed6f000 ---p 00001000 08:01 10231789                   /usr/lib/ladspa/amp.so
+7f4b6ed6f000-7f4b6ed70000 r--p 00000000 08:01 10231789                   /usr/lib/ladspa/amp.so
+7f4b6ed70000-7f4b6ed71000 rw-p 00001000 08:01 10231789                   /usr/lib/ladspa/amp.so
+7f4b6ed71000-7f4b6ed73000 r-xp 00000000 08:01 10231798                   /usr/lib/ladspa/sine.so
+7f4b6ed73000-7f4b6ef72000 ---p 00002000 08:01 10231798                   /usr/lib/ladspa/sine.so
+7f4b6ef72000-7f4b6ef73000 r--p 00001000 08:01 10231798                   /usr/lib/ladspa/sine.so
+7f4b6ef73000-7f4b6ef74000 rw-p 00002000 08:01 10231798                   /usr/lib/ladspa/sine.so
+7f4b6ef74000-7f4b6ef75000 r-xp 00000000 08:01 10231790                   /usr/lib/ladspa/delay.so
+7f4b6ef75000-7f4b6f174000 ---p 00001000 08:01 10231790                   /usr/lib/ladspa/delay.so
+7f4b6f174000-7f4b6f175000 r--p 00000000 08:01 10231790                   /usr/lib/ladspa/delay.so
+7f4b6f175000-7f4b6f176000 rw-p 00001000 08:01 10231790                   /usr/lib/ladspa/delay.so
+7f4b6f176000-7f4b6f177000 r-xp 00000000 08:01 10231794                   /usr/lib/ladspa/noise.so
+7f4b6f177000-7f4b6f376000 ---p 00001000 08:01 10231794                   /usr/lib/ladspa/noise.so
+7f4b6f376000-7f4b6f377000 r--p 00000000 08:01 10231794                   /usr/lib/ladspa/noise.so
+7f4b6f377000-7f4b6f378000 rw-p 00001000 08:01 10231794                   /usr/lib/ladspa/noise.so
+7f4b6f378000-7f4b6f37a000 r-xp 00000000 08:01 8788132                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LadspaUGen.so
+7f4b6f37a000-7f4b6f57a000 ---p 00002000 08:01 8788132                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LadspaUGen.so
+7f4b6f57a000-7f4b6f57b000 r--p 00002000 08:01 8788132                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LadspaUGen.so
+7f4b6f57b000-7f4b6f57c000 rw-p 00003000 08:01 8788132                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LadspaUGen.so
+7f4b6f57c000-7f4b6f598000 r-xp 00000000 08:01 8790239                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/FilterUGens.so
+7f4b6f598000-7f4b6f797000 ---p 0001c000 08:01 8790239                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/FilterUGens.so
+7f4b6f797000-7f4b6f798000 r--p 0001b000 08:01 8790239                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/FilterUGens.so
+7f4b6f798000-7f4b6f799000 rw-p 0001c000 08:01 8790239                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/FilterUGens.so
+7f4b6f799000-7f4b6f85b000 r-xp 00000000 08:01 8790114                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/StkUGens.so
+7f4b6f85b000-7f4b6fa5a000 ---p 000c2000 08:01 8790114                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/StkUGens.so
+7f4b6fa5a000-7f4b6fa5e000 r--p 000c1000 08:01 8790114                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/StkUGens.so
+7f4b6fa5e000-7f4b6fa63000 rw-p 000c5000 08:01 8790114                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/StkUGens.so
+7f4b6fa63000-7f4b6fa66000 r-xp 00000000 08:01 8790107                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MdaUGens.so
+7f4b6fa66000-7f4b6fc65000 ---p 00003000 08:01 8790107                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MdaUGens.so
+7f4b6fc65000-7f4b6fc66000 r--p 00002000 08:01 8790107                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MdaUGens.so
+7f4b6fc66000-7f4b6fd85000 rw-p 00003000 08:01 8790107                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MdaUGens.so
+7f4b6fd85000-7f4b6fd95000 r-xp 00000000 08:01 8788052                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshAmbiUGens.so
+7f4b6fd95000-7f4b6ff94000 ---p 00010000 08:01 8788052                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshAmbiUGens.so
+7f4b6ff94000-7f4b6ff95000 r--p 0000f000 08:01 8788052                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshAmbiUGens.so
+7f4b6ff95000-7f4b6ff96000 rw-p 00010000 08:01 8788052                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshAmbiUGens.so
+7f4b6ff96000-7f4b6ffac000 r-xp 00000000 08:01 8788020                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobFilt.so
+7f4b6ffac000-7f4b701ab000 ---p 00016000 08:01 8788020                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobFilt.so
+7f4b701ab000-7f4b701ac000 r--p 00015000 08:01 8788020                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobFilt.so
+7f4b701ac000-7f4b701ad000 rw-p 00016000 08:01 8788020                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobFilt.so
+7f4b701ad000-7f4b701af000 r-xp 00000000 08:01 8788301                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDPollUGens.so
+7f4b701af000-7f4b703ae000 ---p 00002000 08:01 8788301                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDPollUGens.so
+7f4b703ae000-7f4b703af000 r--p 00001000 08:01 8788301                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDPollUGens.so
+7f4b703af000-7f4b703b0000 rw-p 00002000 08:01 8788301                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDPollUGens.so
+7f4b703b0000-7f4b703c3000 r-xp 00000000 08:01 8790257                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/UnaryOpUGens.so
+7f4b703c3000-7f4b705c3000 ---p 00013000 08:01 8790257                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/UnaryOpUGens.so
+7f4b705c3000-7f4b705c4000 r--p 00013000 08:01 8790257                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/UnaryOpUGens.so
+7f4b705c4000-7f4b705c5000 rw-p 00014000 08:01 8790257                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/UnaryOpUGens.so
+7f4b705c5000-7f4b705c7000 r-xp 00000000 08:01 8790252                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PhysicalModelingUGens.so
+7f4b705c7000-7f4b707c6000 ---p 00002000 08:01 8790252                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PhysicalModelingUGens.so
+7f4b707c6000-7f4b707c7000 r--p 00001000 08:01 8790252                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PhysicalModelingUGens.so
+7f4b707c7000-7f4b707c8000 rw-p 00002000 08:01 8790252                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PhysicalModelingUGens.so
+7f4b707c8000-7f4b707ca000 r-xp 00000000 08:01 8787922                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BatPVUgens.so
+7f4b707ca000-7f4b709c9000 ---p 00002000 08:01 8787922                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BatPVUgens.so
+7f4b709c9000-7f4b709ca000 r--p 00001000 08:01 8787922                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BatPVUgens.so
+7f4b709ca000-7f4b709cb000 rw-p 00002000 08:01 8787922                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BatPVUgens.so
+7f4b709cb000-7f4b709d7000 rw-p 00000000 00:00 0 
+7f4b709d7000-7f4b709dc000 r-xp 00000000 08:01 8788000                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobFFT.so
+7f4b709dc000-7f4b70bdb000 ---p 00005000 08:01 8788000                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobFFT.so
+7f4b70bdb000-7f4b70bdc000 r--p 00004000 08:01 8788000                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobFFT.so
+7f4b70bdc000-7f4b70bdd000 rw-p 00005000 08:01 8788000                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobFFT.so
+7f4b70bdd000-7f4b70be9000 rw-p 00000000 00:00 0 
+7f4b70be9000-7f4b70beb000 r-xp 00000000 08:01 8790255                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TestUGens.so
+7f4b70beb000-7f4b70dea000 ---p 00002000 08:01 8790255                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TestUGens.so
+7f4b70dea000-7f4b70deb000 r--p 00001000 08:01 8790255                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TestUGens.so
+7f4b70deb000-7f4b70dec000 rw-p 00002000 08:01 8790255                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TestUGens.so
+7f4b70dec000-7f4b70df4000 r-xp 00000000 08:01 8790251                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PanUGens.so
+7f4b70df4000-7f4b70ff3000 ---p 00008000 08:01 8790251                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PanUGens.so
+7f4b70ff3000-7f4b70ff4000 r--p 00007000 08:01 8790251                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PanUGens.so
+7f4b70ff4000-7f4b70ff5000 rw-p 00008000 08:01 8790251                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PanUGens.so
+7f4b70ff5000-7f4b70ff7000 r-xp 00000000 08:01 8790086                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f4b70ff7000-7f4b711f6000 ---p 00002000 08:01 8790086                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f4b711f6000-7f4b711f7000 r--p 00001000 08:01 8790086                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f4b711f7000-7f4b711f8000 rw-p 00002000 08:01 8790086                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f4b711f8000-7f4b711fe000 r-xp 00000000 08:01 8790242                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/IOUGens.so
+7f4b711fe000-7f4b713fe000 ---p 00006000 08:01 8790242                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/IOUGens.so
+7f4b713fe000-7f4b713ff000 r--p 00006000 08:01 8790242                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/IOUGens.so
+7f4b713ff000-7f4b71400000 rw-p 00007000 08:01 8790242                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/IOUGens.so
+7f4b71400000-7f4b71403000 r-xp 00000000 08:01 8788265                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDFilterUGens.so
+7f4b71403000-7f4b71602000 ---p 00003000 08:01 8788265                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDFilterUGens.so
+7f4b71602000-7f4b71603000 r--p 00002000 08:01 8788265                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDFilterUGens.so
+7f4b71603000-7f4b71604000 rw-p 00003000 08:01 8788265                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDFilterUGens.so
+7f4b71604000-7f4b71608000 r-xp 00000000 08:01 8790116                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TagSystemUgens.so
+7f4b71608000-7f4b71807000 ---p 00004000 08:01 8790116                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TagSystemUgens.so
+7f4b71807000-7f4b71808000 r--p 00003000 08:01 8790116                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TagSystemUgens.so
+7f4b71808000-7f4b71809000 rw-p 00004000 08:01 8790116                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TagSystemUgens.so
+7f4b71809000-7f4b71821000 r-xp 00000000 08:01 8790241                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GrainUGens.so
+7f4b71821000-7f4b71a20000 ---p 00018000 08:01 8790241                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GrainUGens.so
+7f4b71a20000-7f4b71a21000 r--p 00017000 08:01 8790241                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GrainUGens.so
+7f4b71a21000-7f4b71a22000 rw-p 00018000 08:01 8790241                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GrainUGens.so
+7f4b71a22000-7f4b71a25000 r-xp 00000000 08:01 8788235                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDCepstrumUGens.so
+7f4b71a25000-7f4b71c24000 ---p 00003000 08:01 8788235                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDCepstrumUGens.so
+7f4b71c24000-7f4b71c25000 r--p 00002000 08:01 8788235                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDCepstrumUGens.so
+7f4b71c25000-7f4b71c26000 rw-p 00003000 08:01 8788235                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDCepstrumUGens.so
+7f4b71c26000-7f4b71c32000 rw-p 00000000 00:00 0 
+7f4b71c32000-7f4b71c38000 r-xp 00000000 08:01 8790248                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MulAddUGens.so
+7f4b71c38000-7f4b71e37000 ---p 00006000 08:01 8790248                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MulAddUGens.so
+7f4b71e37000-7f4b71e38000 r--p 00005000 08:01 8790248                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MulAddUGens.so
+7f4b71e38000-7f4b71e39000 rw-p 00006000 08:01 8790248                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MulAddUGens.so
+7f4b71e39000-7f4b71e40000 r-xp 00000000 08:01 8787991                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BetablockerUGens.so
+7f4b71e40000-7f4b7203f000 ---p 00007000 08:01 8787991                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BetablockerUGens.so
+7f4b7203f000-7f4b72040000 r--p 00006000 08:01 8787991                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BetablockerUGens.so
+7f4b72040000-7f4b72041000 rw-p 00007000 08:01 8787991                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BetablockerUGens.so
+7f4b72041000-7f4b7205f000 r-xp 00000000 08:01 8788112                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshUGens.so
+7f4b7205f000-7f4b7225f000 ---p 0001e000 08:01 8788112                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshUGens.so
+7f4b7225f000-7f4b72260000 r--p 0001e000 08:01 8788112                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshUGens.so
+7f4b72260000-7f4b72261000 rw-p 0001f000 08:01 8788112                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshUGens.so
+7f4b72261000-7f4b72267000 r-xp 00000000 08:01 8790249                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/NoiseUGens.so
+7f4b72267000-7f4b72466000 ---p 00006000 08:01 8790249                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/NoiseUGens.so
+7f4b72466000-7f4b72467000 r--p 00005000 08:01 8790249                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/NoiseUGens.so
+7f4b72467000-7f4b72468000 rw-p 00006000 08:01 8790249                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/NoiseUGens.so
+7f4b72468000-7f4b72474000 r-xp 00000000 08:01 8790256                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TriggerUGens.so
+7f4b72474000-7f4b72673000 ---p 0000c000 08:01 8790256                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TriggerUGens.so
+7f4b72673000-7f4b72674000 r--p 0000b000 08:01 8790256                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TriggerUGens.so
+7f4b72674000-7f4b72675000 rw-p 0000c000 08:01 8790256                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/TriggerUGens.so
+7f4b72675000-7f4b72682000 r-xp 00000000 08:01 8790109                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/NCAnalysisUGens.so
+7f4b72682000-7f4b72881000 ---p 0000d000 08:01 8790109                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/NCAnalysisUGens.so
+7f4b72881000-7f4b72882000 r--p 0000c000 08:01 8790109                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/NCAnalysisUGens.so
+7f4b72882000-7f4b72883000 rw-p 0000d000 08:01 8790109                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/NCAnalysisUGens.so
+7f4b72883000-7f4b728ce000 rw-p 00000000 00:00 0 
+7f4b728ce000-7f4b728d1000 r-xp 00000000 08:01 8790119                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/VOSIM.so
+7f4b728d1000-7f4b72ad0000 ---p 00003000 08:01 8790119                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/VOSIM.so
+7f4b72ad0000-7f4b72ad1000 r--p 00002000 08:01 8790119                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/VOSIM.so
+7f4b72ad1000-7f4b72ad2000 rw-p 00003000 08:01 8790119                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/VOSIM.so
+7f4b72ad2000-7f4b72ad5000 r-xp 00000000 08:01 8788188                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LoopBuf.so
+7f4b72ad5000-7f4b72cd4000 ---p 00003000 08:01 8788188                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LoopBuf.so
+7f4b72cd4000-7f4b72cd5000 r--p 00002000 08:01 8788188                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LoopBuf.so
+7f4b72cd5000-7f4b72cd6000 rw-p 00003000 08:01 8788188                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LoopBuf.so
+7f4b72cd6000-7f4b72cdc000 r-xp 00000000 08:01 8788022                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobNoise.so
+7f4b72cdc000-7f4b72edb000 ---p 00006000 08:01 8788022                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobNoise.so
+7f4b72edb000-7f4b72edc000 r--p 00005000 08:01 8788022                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobNoise.so
+7f4b72edc000-7f4b72edd000 rw-p 00006000 08:01 8788022                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobNoise.so
+7f4b72edd000-7f4b72ee0000 r-xp 00000000 08:01 8790108                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MembraneUGens.so
+7f4b72ee0000-7f4b730df000 ---p 00003000 08:01 8790108                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MembraneUGens.so
+7f4b730df000-7f4b730e0000 r--p 00002000 08:01 8790108                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MembraneUGens.so
+7f4b730e0000-7f4b730e1000 rw-p 00003000 08:01 8790108                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MembraneUGens.so
+7f4b730e1000-7f4b730e9000 r-xp 00000000 08:01 8790112                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/RMEQSuite.so
+7f4b730e9000-7f4b732e8000 ---p 00008000 08:01 8790112                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/RMEQSuite.so
+7f4b732e8000-7f4b732e9000 r--p 00007000 08:01 8790112                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/RMEQSuite.so
+7f4b732e9000-7f4b732ea000 rw-p 00008000 08:01 8790112                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/RMEQSuite.so
+7f4b732ea000-7f4b732ee000 r-xp 00000000 08:01 8787857                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AmbisonicUGens.so
+7f4b732ee000-7f4b734ee000 ---p 00004000 08:01 8787857                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AmbisonicUGens.so
+7f4b734ee000-7f4b734ef000 r--p 00004000 08:01 8787857                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AmbisonicUGens.so
+7f4b734ef000-7f4b734f0000 rw-p 00005000 08:01 8787857                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AmbisonicUGens.so
+7f4b734f0000-7f4b734f6000 r-xp 00000000 08:01 8790253                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PV_ThirdParty.so
+7f4b734f6000-7f4b736f6000 ---p 00006000 08:01 8790253                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PV_ThirdParty.so
+7f4b736f6000-7f4b736f7000 r--p 00006000 08:01 8790253                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PV_ThirdParty.so
+7f4b736f7000-7f4b736f8000 rw-p 00007000 08:01 8790253                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PV_ThirdParty.so
+7f4b736f8000-7f4b73728000 rw-p 00000000 00:00 0 
+7f4b73728000-7f4b7372b000 r-xp 00000000 08:01 8790240                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GendynUGens.so
+7f4b7372b000-7f4b7392a000 ---p 00003000 08:01 8790240                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GendynUGens.so
+7f4b7392a000-7f4b7392b000 r--p 00002000 08:01 8790240                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GendynUGens.so
+7f4b7392b000-7f4b7392c000 rw-p 00003000 08:01 8790240                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GendynUGens.so
+7f4b7392c000-7f4b73930000 r-xp 00000000 08:01 8788352                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDSOMUGens.so
+7f4b73930000-7f4b73b2f000 ---p 00004000 08:01 8788352                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDSOMUGens.so
+7f4b73b2f000-7f4b73b30000 r--p 00003000 08:01 8788352                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDSOMUGens.so
+7f4b73b30000-7f4b73b31000 rw-p 00004000 08:01 8788352                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDSOMUGens.so
+7f4b73b31000-7f4b73b3d000 r-xp 00000000 08:01 8790235                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DemandUGens.so
+7f4b73b3d000-7f4b73d3d000 ---p 0000c000 08:01 8790235                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DemandUGens.so
+7f4b73d3d000-7f4b73d3e000 r--p 0000c000 08:01 8790235                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DemandUGens.so
+7f4b73d3e000-7f4b73d3f000 rw-p 0000d000 08:01 8790235                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DemandUGens.so
+7f4b73d3f000-7f4b73d47000 r-xp 00000000 08:01 8790118                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/VBAP.so
+7f4b73d47000-7f4b73f46000 ---p 00008000 08:01 8790118                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/VBAP.so
+7f4b73f46000-7f4b73f47000 r--p 00007000 08:01 8790118                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/VBAP.so
+7f4b73f47000-7f4b73f48000 rw-p 00008000 08:01 8790118                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/VBAP.so
+7f4b73f48000-7f4b73f4a000 r-xp 00000000 08:01 8788239                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDDistortionUGens.so
+7f4b73f4a000-7f4b74149000 ---p 00002000 08:01 8788239                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDDistortionUGens.so
+7f4b74149000-7f4b7414a000 r--p 00001000 08:01 8788239                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDDistortionUGens.so
+7f4b7414a000-7f4b7414b000 rw-p 00002000 08:01 8788239                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDDistortionUGens.so
+7f4b7414b000-7f4b74152000 r-xp 00000000 08:01 8790233                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ChaosUGens.so
+7f4b74152000-7f4b74351000 ---p 00007000 08:01 8790233                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ChaosUGens.so
+7f4b74351000-7f4b74352000 r--p 00006000 08:01 8790233                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ChaosUGens.so
+7f4b74352000-7f4b74353000 rw-p 00007000 08:01 8790233                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ChaosUGens.so
+7f4b74353000-7f4b74354000 ---p 00000000 00:00 0 
+7f4b74354000-7f4b74b54000 rw-p 00000000 00:00 0 
+7f4b74b54000-7f4b74b57000 r-xp 00000000 08:01 8790247                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MouseUGens.so
+7f4b74b57000-7f4b74d56000 ---p 00003000 08:01 8790247                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MouseUGens.so
+7f4b74d56000-7f4b74d57000 r--p 00002000 08:01 8790247                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MouseUGens.so
+7f4b74d57000-7f4b74d58000 rw-p 00003000 08:01 8790247                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MouseUGens.so
+7f4b74d58000-7f4b74d62000 r-xp 00000000 08:01 8790246                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ML_UGens.so
+7f4b74d62000-7f4b74f61000 ---p 0000a000 08:01 8790246                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ML_UGens.so
+7f4b74f61000-7f4b74f62000 r--p 00009000 08:01 8790246                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ML_UGens.so
+7f4b74f62000-7f4b74f6a000 rw-p 0000a000 08:01 8790246                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ML_UGens.so
+7f4b74f6a000-7f4b74fa6000 rw-p 00000000 00:00 0 
+7f4b74fa6000-7f4b74fe0000 r-xp 00000000 08:01 8788080                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshGrainUGens.so
+7f4b74fe0000-7f4b751df000 ---p 0003a000 08:01 8788080                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshGrainUGens.so
+7f4b751df000-7f4b751e0000 r--p 00039000 08:01 8788080                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshGrainUGens.so
+7f4b751e0000-7f4b751e1000 rw-p 0003a000 08:01 8788080                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshGrainUGens.so
+7f4b751e1000-7f4b751e6000 r-xp 00000000 08:01 8788236                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDChaosUGens.so
+7f4b751e6000-7f4b753e5000 ---p 00005000 08:01 8788236                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDChaosUGens.so
+7f4b753e5000-7f4b753e6000 r--p 00004000 08:01 8788236                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDChaosUGens.so
+7f4b753e6000-7f4b753e7000 rw-p 00005000 08:01 8788236                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDChaosUGens.so
+7f4b753e7000-7f4b753ea000 r-xp 00000000 08:01 8788615                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDTreeUGens.so
+7f4b753ea000-7f4b755e9000 ---p 00003000 08:01 8788615                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDTreeUGens.so
+7f4b755e9000-7f4b755ea000 r--p 00002000 08:01 8788615                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDTreeUGens.so
+7f4b755ea000-7f4b755eb000 rw-p 00003000 08:01 8788615                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDTreeUGens.so
+7f4b755eb000-7f4b755f0000 r-xp 00000000 08:01 8788043                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/Concat.so
+7f4b755f0000-7f4b757ef000 ---p 00005000 08:01 8788043                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/Concat.so
+7f4b757ef000-7f4b757f0000 r--p 00004000 08:01 8788043                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/Concat.so
+7f4b757f0000-7f4b757f1000 rw-p 00005000 08:01 8788043                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/Concat.so
+7f4b757f1000-7f4b757f4000 r-xp 00000000 08:01 8790237                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DynNoiseUGens.so
+7f4b757f4000-7f4b759f3000 ---p 00003000 08:01 8790237                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DynNoiseUGens.so
+7f4b759f3000-7f4b759f4000 r--p 00002000 08:01 8790237                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DynNoiseUGens.so
+7f4b759f4000-7f4b759f5000 rw-p 00003000 08:01 8790237                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DynNoiseUGens.so
+7f4b759f5000-7f4b759fb000 r-xp 00000000 08:01 8790254                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ReverbUGens.so
+7f4b759fb000-7f4b75bfa000 ---p 00006000 08:01 8790254                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ReverbUGens.so
+7f4b75bfa000-7f4b75bfb000 r--p 00005000 08:01 8790254                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ReverbUGens.so
+7f4b75bfb000-7f4b75bfc000 rw-p 00006000 08:01 8790254                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/ReverbUGens.so
+7f4b75bfc000-7f4b75bff000 r-xp 00000000 08:01 8788044                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DistortionUGens.so
+7f4b75bff000-7f4b75dfe000 ---p 00003000 08:01 8788044                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DistortionUGens.so
+7f4b75dfe000-7f4b75dff000 r--p 00002000 08:01 8788044                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DistortionUGens.so
+7f4b75dff000-7f4b75e00000 rw-p 00003000 08:01 8788044                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DistortionUGens.so
+7f4b75e00000-7f4b75e12000 r-xp 00000000 08:01 8790244                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LFUGens.so
+7f4b75e12000-7f4b76012000 ---p 00012000 08:01 8790244                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LFUGens.so
+7f4b76012000-7f4b76013000 r--p 00012000 08:01 8790244                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LFUGens.so
+7f4b76013000-7f4b76014000 rw-p 00013000 08:01 8790244                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/LFUGens.so
+7f4b76014000-7f4b76027000 r-xp 00000000 08:01 8788083                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshPVUGens.so
+7f4b76027000-7f4b76226000 ---p 00013000 08:01 8788083                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshPVUGens.so
+7f4b76226000-7f4b76227000 r--p 00012000 08:01 8788083                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshPVUGens.so
+7f4b76227000-7f4b76228000 rw-p 00013000 08:01 8788083                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/JoshPVUGens.so
+7f4b76228000-7f4b76234000 rw-p 00000000 00:00 0 
+7f4b76234000-7f4b76237000 r-xp 00000000 08:01 8788045                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GlitchUGens.so
+7f4b76237000-7f4b76436000 ---p 00003000 08:01 8788045                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GlitchUGens.so
+7f4b76436000-7f4b76437000 r--p 00002000 08:01 8788045                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GlitchUGens.so
+7f4b76437000-7f4b76438000 rw-p 00003000 08:01 8788045                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/GlitchUGens.so
+7f4b76438000-7f4b76446000 r-xp 00000000 08:01 8790113                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/SLUGens.so
+7f4b76446000-7f4b76645000 ---p 0000e000 08:01 8790113                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/SLUGens.so
+7f4b76645000-7f4b76646000 r--p 0000d000 08:01 8790113                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/SLUGens.so
+7f4b76646000-7f4b76647000 rw-p 0000e000 08:01 8790113                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/SLUGens.so
+7f4b76647000-7f4b7664c000 r-xp 00000000 08:01 8788021                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobGrain.so
+7f4b7664c000-7f4b7684c000 ---p 00005000 08:01 8788021                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobGrain.so
+7f4b7684c000-7f4b7684d000 r--p 00005000 08:01 8788021                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobGrain.so
+7f4b7684d000-7f4b7684e000 rw-p 00006000 08:01 8788021                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobGrain.so
+7f4b7684e000-7f4b7684f000 ---p 00000000 00:00 0 
+7f4b7684f000-7f4b7704f000 rw-p 00000000 00:00 0 
+7f4b7704f000-7f4b77052000 r-xp 00000000 08:01 8790236                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DiskIO_UGens.so
+7f4b77052000-7f4b77252000 ---p 00003000 08:01 8790236                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DiskIO_UGens.so
+7f4b77252000-7f4b77253000 r--p 00003000 08:01 8790236                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DiskIO_UGens.so
+7f4b77253000-7f4b77254000 rw-p 00004000 08:01 8790236                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DiskIO_UGens.so
+7f4b77254000-7f4b77255000 rw-p 00000000 00:00 0 
+7f4b77255000-7f4b77270000 r-xp 00000000 08:01 8787882                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AtkUGens.so
+7f4b77270000-7f4b77470000 ---p 0001b000 08:01 8787882                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AtkUGens.so
+7f4b77470000-7f4b77471000 r--p 0001b000 08:01 8787882                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AtkUGens.so
+7f4b77471000-7f4b77472000 rw-p 0001c000 08:01 8787882                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AtkUGens.so
+7f4b77472000-7f4b77476000 r-xp 00000000 08:01 8787932                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BatUGens.so
+7f4b77476000-7f4b77675000 ---p 00004000 08:01 8787932                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BatUGens.so
+7f4b77675000-7f4b77676000 r--p 00003000 08:01 8787932                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BatUGens.so
+7f4b77676000-7f4b77677000 rw-p 00004000 08:01 8787932                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BatUGens.so
+7f4b77677000-7f4b77683000 r-xp 00000000 08:01 8790238                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/FFT_UGens.so
+7f4b77683000-7f4b77883000 ---p 0000c000 08:01 8790238                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/FFT_UGens.so
+7f4b77883000-7f4b77884000 r--p 0000c000 08:01 8790238                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/FFT_UGens.so
+7f4b77884000-7f4b77885000 rw-p 0000d000 08:01 8790238                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/FFT_UGens.so
+7f4b77885000-7f4b778b5000 rw-p 00000000 00:00 0 
+7f4b778b5000-7f4b778b9000 r-xp 00000000 08:01 8787906                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AY_UGen.so
+7f4b778b9000-7f4b77ab8000 ---p 00004000 08:01 8787906                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AY_UGen.so
+7f4b77ab8000-7f4b77ab9000 r--p 00003000 08:01 8787906                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AY_UGen.so
+7f4b77ab9000-7f4b77aba000 rw-p 00004000 08:01 8787906                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/AY_UGen.so
+7f4b77aba000-7f4b77abc000 rw-p 00000000 00:00 0 
+7f4b77abc000-7f4b77ac7000 r-xp 00000000 08:01 8787992                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobChaos.so
+7f4b77ac7000-7f4b77cc6000 ---p 0000b000 08:01 8787992                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobChaos.so
+7f4b77cc6000-7f4b77cc7000 r--p 0000a000 08:01 8787992                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobChaos.so
+7f4b77cc7000-7f4b77cc8000 rw-p 0000b000 08:01 8787992                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BhobChaos.so
+7f4b77cc8000-7f4b77cca000 r-xp 00000000 08:01 8790111                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/RFWUGens.so
+7f4b77cca000-7f4b77ec9000 ---p 00002000 08:01 8790111                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/RFWUGens.so
+7f4b77ec9000-7f4b77eca000 r--p 00001000 08:01 8790111                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/RFWUGens.so
+7f4b77eca000-7f4b77ecb000 rw-p 00002000 08:01 8790111                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/RFWUGens.so
+7f4b77ecb000-7f4b77ece000 r-xp 00000000 08:01 8788027                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BlackrainUGens.so
+7f4b77ece000-7f4b780ce000 ---p 00003000 08:01 8788027                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BlackrainUGens.so
+7f4b780ce000-7f4b780cf000 r--p 00003000 08:01 8788027                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BlackrainUGens.so
+7f4b780cf000-7f4b780d0000 rw-p 00004000 08:01 8788027                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BlackrainUGens.so
+7f4b780d0000-7f4b78102000 r-xp 00000000 08:01 8790232                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BinaryOpUGens.so
+7f4b78102000-7f4b78302000 ---p 00032000 08:01 8790232                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BinaryOpUGens.so
+7f4b78302000-7f4b78303000 r--p 00032000 08:01 8790232                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BinaryOpUGens.so
+7f4b78303000-7f4b78304000 rw-p 00033000 08:01 8790232                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/BinaryOpUGens.so
+7f4b78304000-7f4b78305000 ---p 00000000 00:00 0 
+7f4b78305000-7f4b78b05000 rw-p 00000000 00:00 0 
+7f4b78b05000-7f4b78b06000 r-xp 00000000 08:01 8790243                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/KeyboardUGens.so
+7f4b78b06000-7f4b78d06000 ---p 00001000 08:01 8790243                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/KeyboardUGens.so
+7f4b78d06000-7f4b78d07000 r--p 00001000 08:01 8790243                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/KeyboardUGens.so
+7f4b78d07000-7f4b78d08000 rw-p 00002000 08:01 8790243                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/KeyboardUGens.so
+7f4b78d08000-7f4b78d0a000 r-xp 00000000 08:01 8788270                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDGetenvUGen.so
+7f4b78d0a000-7f4b78f09000 ---p 00002000 08:01 8788270                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDGetenvUGen.so
+7f4b78f09000-7f4b78f0a000 r--p 00001000 08:01 8788270                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDGetenvUGen.so
+7f4b78f0a000-7f4b78f0b000 rw-p 00002000 08:01 8788270                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDGetenvUGen.so
+7f4b78f0b000-7f4b78f17000 r-xp 00000000 08:01 8790110                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PitchDetection.so
+7f4b78f17000-7f4b79116000 ---p 0000c000 08:01 8790110                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PitchDetection.so
+7f4b79116000-7f4b79117000 r--p 0000b000 08:01 8790110                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PitchDetection.so
+7f4b79117000-7f4b79118000 rw-p 0000c000 08:01 8790110                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/PitchDetection.so
+7f4b79118000-7f4b79146000 r-xp 00000000 08:01 8790234                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DelayUGens.so
+7f4b79146000-7f4b79346000 ---p 0002e000 08:01 8790234                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DelayUGens.so
+7f4b79346000-7f4b79347000 r--p 0002e000 08:01 8790234                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DelayUGens.so
+7f4b79347000-7f4b79348000 rw-p 0002f000 08:01 8790234                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/DelayUGens.so
+7f4b79348000-7f4b7934a000 r-xp 00000000 08:01 8788283                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDOscUGens.so
+7f4b7934a000-7f4b79549000 ---p 00002000 08:01 8788283                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDOscUGens.so
+7f4b79549000-7f4b7954a000 r--p 00001000 08:01 8788283                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDOscUGens.so
+7f4b7954a000-7f4b7954b000 rw-p 00002000 08:01 8788283                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/MCLDOscUGens.so
+7f4b7954b000-7f4b7954e000 ---p 00000000 00:00 0 
+7f4b7954e000-7f4b796cc000 rw-p 00000000 00:00 0 
+7f4b796cc000-7f4b7984c000 ---p 00000000 00:00 0 
+7f4b7984c000-7f4b79923000 r-xp 00000000 08:01 9450191                    /usr/lib/libasound.so.2.0.0
+7f4b79923000-7f4b79b23000 ---p 000d7000 08:01 9450191                    /usr/lib/libasound.so.2.0.0
+7f4b79b23000-7f4b79b2b000 r--p 000d7000 08:01 9450191                    /usr/lib/libasound.so.2.0.0
+7f4b79b2b000-7f4b79b2c000 rw-p 000df000 08:01 9450191                    /usr/lib/libasound.so.2.0.0
+7f4b79b2c000-7f4b79b3b000 r-xp 00000000 08:01 10500876                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsoundalsa.so
+7f4b79b3b000-7f4b79d3a000 ---p 0000f000 08:01 10500876                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsoundalsa.so
+7f4b79d3a000-7f4b79d3b000 r--p 0000e000 08:01 10500876                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsoundalsa.so
+7f4b79d3b000-7f4b79d3c000 rw-p 0000f000 08:01 10500876                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsoundalsa.so
+7f4b79d3c000-7f4b79d3d000 r-xp 00000000 08:01 10498926                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsound.so
+7f4b79d3d000-7f4b79f3c000 ---p 00001000 08:01 10498926                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsound.so
+7f4b79f3c000-7f4b79f3d000 r--p 00000000 08:01 10498926                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsound.so
+7f4b79f3d000-7f4b79f3e000 rw-p 00001000 08:01 10498926                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsound.so
+7f4b79f3e000-7f4b7a13e000 rw-p 00000000 00:00 0 
+7f4b7a13e000-7f4b7a33e000 rw-p 00000000 00:00 0 
+7f4b7a33e000-7f4b7a53e000 rw-p 00000000 00:00 0 
+7f4b7a53e000-7f4b7a73e000 rw-p 00000000 00:00 0 
+7f4b7a73e000-7f4b7a741000 ---p 00000000 00:00 0 
+7f4b7a741000-7f4b7a83f000 rw-p 00000000 00:00 0 
+7f4b7a83f000-7f4b7a842000 ---p 00000000 00:00 0 
+7f4b7a842000-7f4b7a940000 rw-p 00000000 00:00 0 
+7f4b7a940000-7f4b7a943000 ---p 00000000 00:00 0 
+7f4b7a943000-7f4b7aa41000 rw-p 00000000 00:00 0 
+7f4b7aa41000-7f4b7aa44000 ---p 00000000 00:00 0 
+7f4b7aa44000-7f4b7ad42000 rw-p 00000000 00:00 0 
+7f4b7ad42000-7f4b7ad45000 ---p 00000000 00:00 0 
+7f4b7ad45000-7f4b7ae43000 rw-p 00000000 00:00 0 
+7f4b7ae43000-7f4b7ae46000 ---p 00000000 00:00 0 
+7f4b7ae46000-7f4b7af44000 rw-p 00000000 00:00 0 
+7f4b7af44000-7f4b7af47000 ---p 00000000 00:00 0 
+7f4b7af47000-7f4b7b245000 rw-p 00000000 00:00 0 
+7f4b7b245000-7f4b7b248000 ---p 00000000 00:00 0 
+7f4b7b248000-7f4b7b346000 rw-p 00000000 00:00 0 
+7f4b7b346000-7f4b7b349000 ---p 00000000 00:00 0 
+7f4b7b349000-7f4b7b447000 rw-p 00000000 00:00 0 
+7f4b7b447000-7f4b7b44a000 ---p 00000000 00:00 0 
+7f4b7b44a000-7f4b7b748000 rw-p 00000000 00:00 0 
+7f4b7b748000-7f4b7b74b000 ---p 00000000 00:00 0 
+7f4b7b74b000-7f4b7b849000 rw-p 00000000 00:00 0 
+7f4b7b849000-7f4b7b84c000 ---p 00000000 00:00 0 
+7f4b7b84c000-7f4b7b94a000 rw-p 00000000 00:00 0 
+7f4b7b94a000-7f4b7b969000 r-xp 00000000 08:01 9453128                    /usr/lib/libgpg-error.so.0.24.2
+7f4b7b969000-7f4b7bb68000 ---p 0001f000 08:01 9453128                    /usr/lib/libgpg-error.so.0.24.2
+7f4b7bb68000-7f4b7bb69000 r--p 0001e000 08:01 9453128                    /usr/lib/libgpg-error.so.0.24.2
+7f4b7bb69000-7f4b7bb6a000 rw-p 0001f000 08:01 9453128                    /usr/lib/libgpg-error.so.0.24.2
+7f4b7bb6a000-7f4b7bc80000 r-xp 00000000 08:01 9453129                    /usr/lib/libgcrypt.so.20.2.3
+7f4b7bc80000-7f4b7be7f000 ---p 00116000 08:01 9453129                    /usr/lib/libgcrypt.so.20.2.3
+7f4b7be7f000-7f4b7be81000 r--p 00115000 08:01 9453129                    /usr/lib/libgcrypt.so.20.2.3
+7f4b7be81000-7f4b7be86000 rw-p 00117000 08:01 9453129                    /usr/lib/libgcrypt.so.20.2.3
+7f4b7be86000-7f4b7bea2000 r-xp 00000000 08:01 9453143                    /usr/lib/liblz4.so.1.8.2
+7f4b7bea2000-7f4b7c0a1000 ---p 0001c000 08:01 9453143                    /usr/lib/liblz4.so.1.8.2
+7f4b7c0a1000-7f4b7c0a2000 r--p 0001b000 08:01 9453143                    /usr/lib/liblz4.so.1.8.2
+7f4b7c0a2000-7f4b7c0a3000 rw-p 0001c000 08:01 9453143                    /usr/lib/liblz4.so.1.8.2
+7f4b7c0a3000-7f4b7c0c8000 r-xp 00000000 08:01 9438015                    /usr/lib/liblzma.so.5.2.4
+7f4b7c0c8000-7f4b7c2c7000 ---p 00025000 08:01 9438015                    /usr/lib/liblzma.so.5.2.4
+7f4b7c2c7000-7f4b7c2c8000 r--p 00024000 08:01 9438015                    /usr/lib/liblzma.so.5.2.4
+7f4b7c2c8000-7f4b7c2c9000 rw-p 00025000 08:01 9438015                    /usr/lib/liblzma.so.5.2.4
+7f4b7c2c9000-7f4b7c34f000 r-xp 00000000 08:01 9453581                    /usr/lib/libsystemd.so.0.23.0
+7f4b7c34f000-7f4b7c54e000 ---p 00086000 08:01 9453581                    /usr/lib/libsystemd.so.0.23.0
+7f4b7c54e000-7f4b7c551000 r--p 00085000 08:01 9453581                    /usr/lib/libsystemd.so.0.23.0
+7f4b7c551000-7f4b7c552000 rw-p 00088000 08:01 9453581                    /usr/lib/libsystemd.so.0.23.0
+7f4b7c552000-7f4b7c553000 rw-p 00000000 00:00 0 
+7f4b7c553000-7f4b7c5a6000 r-xp 00000000 08:01 9451659                    /usr/lib/libopus.so.0.6.1
+7f4b7c5a6000-7f4b7c7a5000 ---p 00053000 08:01 9451659                    /usr/lib/libopus.so.0.6.1
+7f4b7c7a5000-7f4b7c7a6000 r--p 00052000 08:01 9451659                    /usr/lib/libopus.so.0.6.1
+7f4b7c7a6000-7f4b7c7a7000 rw-p 00053000 08:01 9451659                    /usr/lib/libopus.so.0.6.1
+7f4b7c7a7000-7f4b7c7be000 r-xp 00000000 08:01 9451381                    /usr/lib/libcelt0.so.2.0.0
+7f4b7c7be000-7f4b7c9be000 ---p 00017000 08:01 9451381                    /usr/lib/libcelt0.so.2.0.0
+7f4b7c9be000-7f4b7c9bf000 r--p 00017000 08:01 9451381                    /usr/lib/libcelt0.so.2.0.0
+7f4b7c9bf000-7f4b7c9c0000 rw-p 00018000 08:01 9451381                    /usr/lib/libcelt0.so.2.0.0
+7f4b7c9c0000-7f4b7ca4d000 r-xp 00000000 08:01 9451089                    /usr/lib/libvorbisenc.so.2.0.11
+7f4b7ca4d000-7f4b7cc4c000 ---p 0008d000 08:01 9451089                    /usr/lib/libvorbisenc.so.2.0.11
+7f4b7cc4c000-7f4b7cc68000 r--p 0008c000 08:01 9451089                    /usr/lib/libvorbisenc.so.2.0.11
+7f4b7cc68000-7f4b7cc69000 rw-p 000a8000 08:01 9451089                    /usr/lib/libvorbisenc.so.2.0.11
+7f4b7cc69000-7f4b7cc93000 r-xp 00000000 08:01 9451087                    /usr/lib/libvorbis.so.0.4.8
+7f4b7cc93000-7f4b7ce93000 ---p 0002a000 08:01 9451087                    /usr/lib/libvorbis.so.0.4.8
+7f4b7ce93000-7f4b7ce94000 r--p 0002a000 08:01 9451087                    /usr/lib/libvorbis.so.0.4.8
+7f4b7ce94000-7f4b7ce95000 rw-p 0002b000 08:01 9451087                    /usr/lib/libvorbis.so.0.4.8
+7f4b7ce95000-7f4b7ce9a000 r-xp 00000000 08:01 9453517                    /usr/lib/libogg.so.0.8.3
+7f4b7ce9a000-7f4b7d09a000 ---p 00005000 08:01 9453517                    /usr/lib/libogg.so.0.8.3
+7f4b7d09a000-7f4b7d09b000 r--p 00005000 08:01 9453517                    /usr/lib/libogg.so.0.8.3
+7f4b7d09b000-7f4b7d09c000 rw-p 00006000 08:01 9453517                    /usr/lib/libogg.so.0.8.3
+7f4b7d09c000-7f4b7d112000 r-xp 00000000 08:01 9451198                    /usr/lib/libFLAC.so.8.3.0
+7f4b7d112000-7f4b7d312000 ---p 00076000 08:01 9451198                    /usr/lib/libFLAC.so.8.3.0
+7f4b7d312000-7f4b7d313000 r--p 00076000 08:01 9451198                    /usr/lib/libFLAC.so.8.3.0
+7f4b7d313000-7f4b7d314000 rw-p 00077000 08:01 9451198                    /usr/lib/libFLAC.so.8.3.0
+7f4b7d314000-7f4b7d362000 r-xp 00000000 08:01 9437644                    /usr/lib/libdbus-1.so.3.19.7
+7f4b7d362000-7f4b7d562000 ---p 0004e000 08:01 9437644                    /usr/lib/libdbus-1.so.3.19.7
+7f4b7d562000-7f4b7d564000 r--p 0004e000 08:01 9437644                    /usr/lib/libdbus-1.so.3.19.7
+7f4b7d564000-7f4b7d565000 rw-p 00050000 08:01 9437644                    /usr/lib/libdbus-1.so.3.19.7
+7f4b7d565000-7f4b7d6de000 r-xp 00000000 08:01 9445337                    /usr/lib/libstdc++.so.6.0.25
+7f4b7d6de000-7f4b7d8de000 ---p 00179000 08:01 9445337                    /usr/lib/libstdc++.so.6.0.25
+7f4b7d8de000-7f4b7d8ea000 r--p 00179000 08:01 9445337                    /usr/lib/libstdc++.so.6.0.25
+7f4b7d8ea000-7f4b7d8eb000 rw-p 00185000 08:01 9445337                    /usr/lib/libstdc++.so.6.0.25
+7f4b7d8eb000-7f4b7d8ee000 rw-p 00000000 00:00 0 
+7f4b7d8ee000-7f4b7db11000 r-xp 00000000 08:01 9450419                    /usr/lib/libfftw3f.so.3.5.8
+7f4b7db11000-7f4b7dd11000 ---p 00223000 08:01 9450419                    /usr/lib/libfftw3f.so.3.5.8
+7f4b7dd11000-7f4b7dd22000 r--p 00223000 08:01 9450419                    /usr/lib/libfftw3f.so.3.5.8
+7f4b7dd22000-7f4b7dd23000 rw-p 00234000 08:01 9450419                    /usr/lib/libfftw3f.so.3.5.8
+7f4b7dd23000-7f4b7dd96000 r-xp 00000000 08:01 9451731                    /usr/lib/libsndfile.so.1.0.28
+7f4b7dd96000-7f4b7df95000 ---p 00073000 08:01 9451731                    /usr/lib/libsndfile.so.1.0.28
+7f4b7df95000-7f4b7df98000 r--p 00072000 08:01 9451731                    /usr/lib/libsndfile.so.1.0.28
+7f4b7df98000-7f4b7df99000 rw-p 00075000 08:01 9451731                    /usr/lib/libsndfile.so.1.0.28
+7f4b7df99000-7f4b7df9b000 rw-p 00000000 00:00 0 
+7f4b7df9b000-7f4b7dfab000 r-xp 00000000 08:01 9447562                    /usr/lib/libavahi-client.so.3.2.9
+7f4b7dfab000-7f4b7e1aa000 ---p 00010000 08:01 9447562                    /usr/lib/libavahi-client.so.3.2.9
+7f4b7e1aa000-7f4b7e1ab000 r--p 0000f000 08:01 9447562                    /usr/lib/libavahi-client.so.3.2.9
+7f4b7e1ab000-7f4b7e1ac000 rw-p 00010000 08:01 9447562                    /usr/lib/libavahi-client.so.3.2.9
+7f4b7e1ac000-7f4b7e1b7000 r-xp 00000000 08:01 9447558                    /usr/lib/libavahi-common.so.3.5.3
+7f4b7e1b7000-7f4b7e3b7000 ---p 0000b000 08:01 9447558                    /usr/lib/libavahi-common.so.3.5.3
+7f4b7e3b7000-7f4b7e3b8000 r--p 0000b000 08:01 9447558                    /usr/lib/libavahi-common.so.3.5.3
+7f4b7e3b8000-7f4b7e3b9000 rw-p 0000c000 08:01 9447558                    /usr/lib/libavahi-common.so.3.5.3
+7f4b7e3b9000-7f4b7e41b000 r-xp 00000000 08:01 8790245                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/libscsynth.so
+7f4b7e41b000-7f4b7e61b000 ---p 00062000 08:01 8790245                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/libscsynth.so
+7f4b7e61b000-7f4b7e61d000 r--p 00062000 08:01 8790245                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/libscsynth.so
+7f4b7e61d000-7f4b7e61f000 rw-p 00064000 08:01 8790245                    /home/adam/clojure-projects/spheres/target/default/native/linux/x86_64/libscsynth.so
+7f4b7e61f000-7f4b7e63f000 rw-p 00000000 00:00 0 
+7f4b7e63f000-7f4b7e656000 r-xp 00000000 00:27 38                         /tmp/jna-2988943/jna4180860919191801708.tmp (deleted)
+7f4b7e656000-7f4b7e755000 ---p 00017000 00:27 38                         /tmp/jna-2988943/jna4180860919191801708.tmp (deleted)
+7f4b7e755000-7f4b7e757000 rw-p 00016000 00:27 38                         /tmp/jna-2988943/jna4180860919191801708.tmp (deleted)
+7f4b7e757000-7f4b7e957000 rw-p 00000000 00:00 0 
+7f4b7e957000-7f4b7eb57000 rw-p 00000000 00:00 0 
+7f4b7eb57000-7f4b7ed57000 rw-p 00000000 00:00 0 
+7f4b7ed57000-7f4b7ed5a000 ---p 00000000 00:00 0 
+7f4b7ed5a000-7f4b7ee58000 rw-p 00000000 00:00 0 
+7f4b7ee58000-7f4b7ee5d000 r-xp 00000000 08:01 9439046                    /usr/lib/libXfixes.so.3.1.0
+7f4b7ee5d000-7f4b7f05c000 ---p 00005000 08:01 9439046                    /usr/lib/libXfixes.so.3.1.0
+7f4b7f05c000-7f4b7f05d000 r--p 00004000 08:01 9439046                    /usr/lib/libXfixes.so.3.1.0
+7f4b7f05d000-7f4b7f05e000 rw-p 00005000 08:01 9439046                    /usr/lib/libXfixes.so.3.1.0
+7f4b7f05e000-7f4b7f067000 r-xp 00000000 08:01 9450146                    /usr/lib/libXcursor.so.1.0.2
+7f4b7f067000-7f4b7f266000 ---p 00009000 08:01 9450146                    /usr/lib/libXcursor.so.1.0.2
+7f4b7f266000-7f4b7f267000 r--p 00008000 08:01 9450146                    /usr/lib/libXcursor.so.1.0.2
+7f4b7f267000-7f4b7f268000 rw-p 00009000 08:01 9450146                    /usr/lib/libXcursor.so.1.0.2
+7f4b7f268000-7f4b7f26b000 ---p 00000000 00:00 0 
+7f4b7f26b000-7f4b7f369000 rw-p 00000000 00:00 0 
+7f4b7f369000-7f4b7f3da000 r-xp 00000000 08:01 9441424                    /usr/lib/libpcre.so.1.2.10
+7f4b7f3da000-7f4b7f5d9000 ---p 00071000 08:01 9441424                    /usr/lib/libpcre.so.1.2.10
+7f4b7f5d9000-7f4b7f5da000 r--p 00070000 08:01 9441424                    /usr/lib/libpcre.so.1.2.10
+7f4b7f5da000-7f4b7f5db000 rw-p 00071000 08:01 9441424                    /usr/lib/libpcre.so.1.2.10
+7f4b7f5db000-7f4b7f605000 r-xp 00000000 08:01 9445412                    /usr/lib/libgraphite2.so.3.0.1
+7f4b7f605000-7f4b7f804000 ---p 0002a000 08:01 9445412                    /usr/lib/libgraphite2.so.3.0.1
+7f4b7f804000-7f4b7f806000 r--p 00029000 08:01 9445412                    /usr/lib/libgraphite2.so.3.0.1
+7f4b7f806000-7f4b7f807000 rw-p 0002b000 08:01 9445412                    /usr/lib/libgraphite2.so.3.0.1
+7f4b7f807000-7f4b7f91c000 r-xp 00000000 08:01 9439604                    /usr/lib/libglib-2.0.so.0.5600.1
+7f4b7f91c000-7f4b7fb1b000 ---p 00115000 08:01 9439604                    /usr/lib/libglib-2.0.so.0.5600.1
+7f4b7fb1b000-7f4b7fb1c000 r--p 00114000 08:01 9439604                    /usr/lib/libglib-2.0.so.0.5600.1
+7f4b7fb1c000-7f4b7fb1d000 rw-p 00115000 08:01 9439604                    /usr/lib/libglib-2.0.so.0.5600.1
+7f4b7fb1d000-7f4b7fb1e000 rw-p 00000000 00:00 0 
+7f4b7fb1e000-7f4b7fbc8000 r-xp 00000000 08:01 9446883                    /usr/lib/libharfbuzz.so.0.10800.2
+7f4b7fbc8000-7f4b7fdc7000 ---p 000aa000 08:01 9446883                    /usr/lib/libharfbuzz.so.0.10800.2
+7f4b7fdc7000-7f4b7fdc9000 r--p 000a9000 08:01 9446883                    /usr/lib/libharfbuzz.so.0.10800.2
+7f4b7fdc9000-7f4b7fdca000 rw-p 000ab000 08:01 9446883                    /usr/lib/libharfbuzz.so.0.10800.2
+7f4b7fdca000-7f4b7fdff000 r-xp 00000000 08:01 9451683                    /usr/lib/libpng16.so.16.34.0
+7f4b7fdff000-7f4b7fffe000 ---p 00035000 08:01 9451683                    /usr/lib/libpng16.so.16.34.0
+7f4b7fffe000-7f4b7ffff000 r--p 00034000 08:01 9451683                    /usr/lib/libpng16.so.16.34.0
+7f4b7ffff000-7f4b80000000 rw-p 00035000 08:01 9451683                    /usr/lib/libpng16.so.16.34.0
+7f4b80000000-7f4b80efe000 rw-p 00000000 00:00 0 
+7f4b80efe000-7f4b84000000 ---p 00000000 00:00 0 
+7f4b84000000-7f4b84478000 rw-p 00000000 00:00 0 
+7f4b84478000-7f4b88000000 ---p 00000000 00:00 0 
+7f4b880f2000-7f4b88101000 r-xp 00000000 08:01 9437560                    /usr/lib/libbz2.so.1.0.6
+7f4b88101000-7f4b88300000 ---p 0000f000 08:01 9437560                    /usr/lib/libbz2.so.1.0.6
+7f4b88300000-7f4b88301000 r--p 0000e000 08:01 9437560                    /usr/lib/libbz2.so.1.0.6
+7f4b88301000-7f4b88302000 rw-p 0000f000 08:01 9437560                    /usr/lib/libbz2.so.1.0.6
+7f4b88302000-7f4b883c3000 r-xp 00000000 08:01 9446890                    /usr/lib/libfreetype.so.6.16.1
+7f4b883c3000-7f4b885c3000 ---p 000c1000 08:01 9446890                    /usr/lib/libfreetype.so.6.16.1
+7f4b885c3000-7f4b885ca000 r--p 000c1000 08:01 9446890                    /usr/lib/libfreetype.so.6.16.1
+7f4b885ca000-7f4b885cb000 rw-p 000c8000 08:01 9446890                    /usr/lib/libfreetype.so.6.16.1
+7f4b885cb000-7f4b8862d000 r-xp 00000000 08:01 10500885                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libfontmanager.so
+7f4b8862d000-7f4b8882d000 ---p 00062000 08:01 10500885                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libfontmanager.so
+7f4b8882d000-7f4b88830000 r--p 00062000 08:01 10500885                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libfontmanager.so
+7f4b88830000-7f4b88831000 rw-p 00065000 08:01 10500885                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libfontmanager.so
+7f4b88831000-7f4b88836000 r-xp 00000000 08:01 9447049                    /usr/lib/libXdmcp.so.6.0.0
+7f4b88836000-7f4b88a35000 ---p 00005000 08:01 9447049                    /usr/lib/libXdmcp.so.6.0.0
+7f4b88a35000-7f4b88a36000 r--p 00004000 08:01 9447049                    /usr/lib/libXdmcp.so.6.0.0
+7f4b88a36000-7f4b88a37000 rw-p 00005000 08:01 9447049                    /usr/lib/libXdmcp.so.6.0.0
+7f4b88a37000-7f4b88a39000 r-xp 00000000 08:01 9438988                    /usr/lib/libXau.so.6.0.0
+7f4b88a39000-7f4b88c39000 ---p 00002000 08:01 9438988                    /usr/lib/libXau.so.6.0.0
+7f4b88c39000-7f4b88c3a000 r--p 00002000 08:01 9438988                    /usr/lib/libXau.so.6.0.0
+7f4b88c3a000-7f4b88c3b000 rw-p 00003000 08:01 9438988                    /usr/lib/libXau.so.6.0.0
+7f4b88c3b000-7f4b88c62000 r-xp 00000000 08:01 9441576                    /usr/lib/libxcb.so.1.1.0
+7f4b88c62000-7f4b88e62000 ---p 00027000 08:01 9441576                    /usr/lib/libxcb.so.1.1.0
+7f4b88e62000-7f4b88e63000 r--p 00027000 08:01 9441576                    /usr/lib/libxcb.so.1.1.0
+7f4b88e63000-7f4b88e64000 rw-p 00028000 08:01 9441576                    /usr/lib/libxcb.so.1.1.0
+7f4b88e64000-7f4b88e73000 r-xp 00000000 08:01 9451295                    /usr/lib/libXi.so.6.1.0
+7f4b88e73000-7f4b89073000 ---p 0000f000 08:01 9451295                    /usr/lib/libXi.so.6.1.0
+7f4b89073000-7f4b89074000 r--p 0000f000 08:01 9451295                    /usr/lib/libXi.so.6.1.0
+7f4b89074000-7f4b89075000 rw-p 00010000 08:01 9451295                    /usr/lib/libXi.so.6.1.0
+7f4b89075000-7f4b8907a000 r-xp 00000000 08:01 9451304                    /usr/lib/libXtst.so.6.1.0
+7f4b8907a000-7f4b89279000 ---p 00005000 08:01 9451304                    /usr/lib/libXtst.so.6.1.0
+7f4b89279000-7f4b8927a000 r--p 00004000 08:01 9451304                    /usr/lib/libXtst.so.6.1.0
+7f4b8927a000-7f4b8927b000 rw-p 00005000 08:01 9451304                    /usr/lib/libXtst.so.6.1.0
+7f4b8927b000-7f4b89284000 r-xp 00000000 08:01 9451301                    /usr/lib/libXrender.so.1.3.0
+7f4b89284000-7f4b89484000 ---p 00009000 08:01 9451301                    /usr/lib/libXrender.so.1.3.0
+7f4b89484000-7f4b89485000 r--p 00009000 08:01 9451301                    /usr/lib/libXrender.so.1.3.0
+7f4b89485000-7f4b89486000 rw-p 0000a000 08:01 9451301                    /usr/lib/libXrender.so.1.3.0
+7f4b89486000-7f4b895bf000 r-xp 00000000 08:01 9442844                    /usr/lib/libX11.so.6.3.0
+7f4b895bf000-7f4b897bf000 ---p 00139000 08:01 9442844                    /usr/lib/libX11.so.6.3.0
+7f4b897bf000-7f4b897c0000 r--p 00139000 08:01 9442844                    /usr/lib/libX11.so.6.3.0
+7f4b897c0000-7f4b897c5000 rw-p 0013a000 08:01 9442844                    /usr/lib/libX11.so.6.3.0
+7f4b897c5000-7f4b897d6000 r-xp 00000000 08:01 9447050                    /usr/lib/libXext.so.6.4.0
+7f4b897d6000-7f4b899d5000 ---p 00011000 08:01 9447050                    /usr/lib/libXext.so.6.4.0
+7f4b899d5000-7f4b899d6000 r--p 00010000 08:01 9447050                    /usr/lib/libXext.so.6.4.0
+7f4b899d6000-7f4b899d7000 rw-p 00011000 08:01 9447050                    /usr/lib/libXext.so.6.4.0
+7f4b899d7000-7f4b89a2b000 r-xp 00000000 08:01 10500883                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt_xawt.so
+7f4b89a2b000-7f4b89c2a000 ---p 00054000 08:01 10500883                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt_xawt.so
+7f4b89c2a000-7f4b89c2b000 r--p 00053000 08:01 10500883                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt_xawt.so
+7f4b89c2b000-7f4b89c2e000 rw-p 00054000 08:01 10500883                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt_xawt.so
+7f4b89c2e000-7f4b89c2f000 rw-p 00000000 00:00 0 
+7f4b89c2f000-7f4b89cd0000 r-xp 00000000 08:01 10500878                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt.so
+7f4b89cd0000-7f4b89ecf000 ---p 000a1000 08:01 10500878                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt.so
+7f4b89ecf000-7f4b89ed0000 r--p 000a0000 08:01 10500878                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt.so
+7f4b89ed0000-7f4b89edb000 rw-p 000a1000 08:01 10500878                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt.so
+7f4b89edb000-7f4b8a100000 rw-p 00000000 00:00 0 
+7f4b8a100000-7f4b8a103000 ---p 00000000 00:00 0 
+7f4b8a103000-7f4b8a201000 rw-p 00000000 00:00 0 
+7f4b8a201000-7f4b8a204000 ---p 00000000 00:00 0 
+7f4b8a204000-7f4b8a302000 rw-p 00000000 00:00 0 
+7f4b8a302000-7f4b8a315000 r-xp 00000000 08:01 9438032                    /usr/lib/libresolv-2.27.so
+7f4b8a315000-7f4b8a515000 ---p 00013000 08:01 9438032                    /usr/lib/libresolv-2.27.so
+7f4b8a515000-7f4b8a516000 r--p 00013000 08:01 9438032                    /usr/lib/libresolv-2.27.so
+7f4b8a516000-7f4b8a517000 rw-p 00014000 08:01 9438032                    /usr/lib/libresolv-2.27.so
+7f4b8a517000-7f4b8a519000 rw-p 00000000 00:00 0 
+7f4b8a519000-7f4b8a51e000 r-xp 00000000 08:01 9438160                    /usr/lib/libnss_dns-2.27.so
+7f4b8a51e000-7f4b8a71d000 ---p 00005000 08:01 9438160                    /usr/lib/libnss_dns-2.27.so
+7f4b8a71d000-7f4b8a71e000 r--p 00004000 08:01 9438160                    /usr/lib/libnss_dns-2.27.so
+7f4b8a71e000-7f4b8a71f000 rw-p 00005000 08:01 9438160                    /usr/lib/libnss_dns-2.27.so
+7f4b8a71f000-7f4b8a75d000 r-xp 00000000 08:01 9453136                    /usr/lib/libnss_resolve.so.2
+7f4b8a75d000-7f4b8a95c000 ---p 0003e000 08:01 9453136                    /usr/lib/libnss_resolve.so.2
+7f4b8a95c000-7f4b8a95f000 r--p 0003d000 08:01 9453136                    /usr/lib/libnss_resolve.so.2
+7f4b8a95f000-7f4b8a960000 rw-p 00040000 08:01 9453136                    /usr/lib/libnss_resolve.so.2
+7f4b8a960000-7f4b8a961000 rw-p 00000000 00:00 0 
+7f4b8a961000-7f4b8a963000 r-xp 00000000 08:01 9451644                    /usr/lib/libnss_mdns4_minimal.so.2
+7f4b8a963000-7f4b8ab62000 ---p 00002000 08:01 9451644                    /usr/lib/libnss_mdns4_minimal.so.2
+7f4b8ab62000-7f4b8ab63000 r--p 00001000 08:01 9451644                    /usr/lib/libnss_mdns4_minimal.so.2
+7f4b8ab63000-7f4b8ab64000 rw-p 00002000 08:01 9451644                    /usr/lib/libnss_mdns4_minimal.so.2
+7f4b8ab64000-7f4b8aba3000 r-xp 00000000 08:01 9453135                    /usr/lib/libnss_mymachines.so.2
+7f4b8aba3000-7f4b8ada2000 ---p 0003f000 08:01 9453135                    /usr/lib/libnss_mymachines.so.2
+7f4b8ada2000-7f4b8ada5000 r--p 0003e000 08:01 9453135                    /usr/lib/libnss_mymachines.so.2
+7f4b8ada5000-7f4b8ada6000 rw-p 00041000 08:01 9453135                    /usr/lib/libnss_mymachines.so.2
+7f4b8ada6000-7f4b8afa1000 rw-p 00000000 00:00 0 
+7f4b8afa1000-7f4b8afa7000 ---p 00000000 00:00 0 
+7f4b8afa7000-7f4b8afbe000 r-xp 00000000 08:01 9445300                    /usr/lib/libgcc_s.so.1
+7f4b8afbe000-7f4b8b1bd000 ---p 00017000 08:01 9445300                    /usr/lib/libgcc_s.so.1
+7f4b8b1bd000-7f4b8b1be000 r--p 00016000 08:01 9445300                    /usr/lib/libgcc_s.so.1
+7f4b8b1be000-7f4b8b1bf000 rw-p 00017000 08:01 9445300                    /usr/lib/libgcc_s.so.1
+7f4b8b1bf000-7f4b8b1f8000 r-xp 00000000 08:01 10500941                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libsunec.so
+7f4b8b1f8000-7f4b8b3f7000 ---p 00039000 08:01 10500941                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libsunec.so
+7f4b8b3f7000-7f4b8b3fc000 r--p 00038000 08:01 10500941                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libsunec.so
+7f4b8b3fc000-7f4b8b3fd000 rw-p 0003d000 08:01 10500941                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libsunec.so
+7f4b8b3fd000-7f4b8b5fe000 rw-p 00000000 00:00 0 
+7f4b8b5fe000-7f4b8b7fe000 rw-p 00000000 00:00 0 
+7f4b8b7fe000-7f4b8b9fe000 rw-p 00000000 00:00 0 
+7f4b8b9fe000-7f4b8bbfe000 rw-p 00000000 00:00 0 
+7f4b8bbfe000-7f4b8bc01000 ---p 00000000 00:00 0 
+7f4b8bc01000-7f4b8beff000 rw-p 00000000 00:00 0 
+7f4b8beff000-7f4b8bf02000 ---p 00000000 00:00 0 
+7f4b8bf02000-7f4b8c000000 rw-p 00000000 00:00 0 
+7f4b8c000000-7f4b8c021000 rw-p 00000000 00:00 0 
+7f4b8c021000-7f4b90000000 ---p 00000000 00:00 0 
+7f4b90000000-7f4b90021000 rw-p 00000000 00:00 0 
+7f4b90021000-7f4b94000000 ---p 00000000 00:00 0 
+7f4b94000000-7f4b94021000 rw-p 00000000 00:00 0 
+7f4b94021000-7f4b98000000 ---p 00000000 00:00 0 
+7f4b98000000-7f4b98021000 rw-p 00000000 00:00 0 
+7f4b98021000-7f4b9c000000 ---p 00000000 00:00 0 
+7f4b9c000000-7f4b9c021000 rw-p 00000000 00:00 0 
+7f4b9c021000-7f4ba0000000 ---p 00000000 00:00 0 
+7f4ba0000000-7f4ba0021000 rw-p 00000000 00:00 0 
+7f4ba0021000-7f4ba4000000 ---p 00000000 00:00 0 
+7f4ba4000000-7f4ba4021000 rw-p 00000000 00:00 0 
+7f4ba4021000-7f4ba8000000 ---p 00000000 00:00 0 
+7f4ba8000000-7f4ba8021000 rw-p 00000000 00:00 0 
+7f4ba8021000-7f4bac000000 ---p 00000000 00:00 0 
+7f4bac000000-7f4bac021000 rw-p 00000000 00:00 0 
+7f4bac021000-7f4bb0000000 ---p 00000000 00:00 0 
+7f4bb0000000-7f4bb0021000 rw-p 00000000 00:00 0 
+7f4bb0021000-7f4bb4000000 ---p 00000000 00:00 0 
+7f4bb4000000-7f4bb4021000 rw-p 00000000 00:00 0 
+7f4bb4021000-7f4bb8000000 ---p 00000000 00:00 0 
+7f4bb8000000-7f4bb8021000 rw-p 00000000 00:00 0 
+7f4bb8021000-7f4bbc000000 ---p 00000000 00:00 0 
+7f4bbc000000-7f4bbc021000 rw-p 00000000 00:00 0 
+7f4bbc021000-7f4bc0000000 ---p 00000000 00:00 0 
+7f4bc0000000-7f4bc0021000 rw-p 00000000 00:00 0 
+7f4bc0021000-7f4bc4000000 ---p 00000000 00:00 0 
+7f4bc4000000-7f4bc4029000 rw-p 00000000 00:00 0 
+7f4bc4029000-7f4bc8000000 ---p 00000000 00:00 0 
+7f4bc8039000-7f4bc804a000 r--p 00000000 08:01 9454652                    /usr/lib/libjack.so.0.1.0
+7f4bc804a000-7f4bc8079000 r-xp 00011000 08:01 9454652                    /usr/lib/libjack.so.0.1.0
+7f4bc8079000-7f4bc8092000 r--p 00040000 08:01 9454652                    /usr/lib/libjack.so.0.1.0
+7f4bc8092000-7f4bc8093000 ---p 00059000 08:01 9454652                    /usr/lib/libjack.so.0.1.0
+7f4bc8093000-7f4bc8095000 r--p 00059000 08:01 9454652                    /usr/lib/libjack.so.0.1.0
+7f4bc8095000-7f4bc8096000 rw-p 0005b000 08:01 9454652                    /usr/lib/libjack.so.0.1.0
+7f4bc8096000-7f4bc8097000 rw-p 00000000 00:00 0 
+7f4bc8097000-7f4bc809a000 ---p 00000000 00:00 0 
+7f4bc809a000-7f4bc8198000 rw-p 00000000 00:00 0 
+7f4bc8198000-7f4bc819b000 ---p 00000000 00:00 0 
+7f4bc819b000-7f4bc8299000 rw-p 00000000 00:00 0 
+7f4bc8299000-7f4bc829c000 ---p 00000000 00:00 0 
+7f4bc829c000-7f4bc839a000 rw-p 00000000 00:00 0 
+7f4bc839a000-7f4bc839d000 ---p 00000000 00:00 0 
+7f4bc839d000-7f4bc849b000 rw-p 00000000 00:00 0 
+7f4bc849b000-7f4bc849e000 ---p 00000000 00:00 0 
+7f4bc849e000-7f4bc859c000 rw-p 00000000 00:00 0 
+7f4bc859c000-7f4bc859f000 ---p 00000000 00:00 0 
+7f4bc859f000-7f4bc869d000 rw-p 00000000 00:00 0 
+7f4bc869d000-7f4bc86a0000 ---p 00000000 00:00 0 
+7f4bc86a0000-7f4bc879e000 rw-p 00000000 00:00 0 
+7f4bc879e000-7f4bc87a1000 ---p 00000000 00:00 0 
+7f4bc87a1000-7f4bc889f000 rw-p 00000000 00:00 0 
+7f4bc889f000-7f4bc88a2000 ---p 00000000 00:00 0 
+7f4bc88a2000-7f4bc89a0000 rw-p 00000000 00:00 0 
+7f4bc89a0000-7f4bc89a3000 ---p 00000000 00:00 0 
+7f4bc89a3000-7f4bc8aa1000 rw-p 00000000 00:00 0 
+7f4bc8aa1000-7f4bc8aa4000 ---p 00000000 00:00 0 
+7f4bc8aa4000-7f4bc8ba2000 rw-p 00000000 00:00 0 
+7f4bc8ba2000-7f4bc8ba5000 ---p 00000000 00:00 0 
+7f4bc8ba5000-7f4bc8ca3000 rw-p 00000000 00:00 0 
+7f4bc8ca3000-7f4bc8cab000 r-xp 00000000 08:01 10500879                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libmanagement.so
+7f4bc8cab000-7f4bc8eab000 ---p 00008000 08:01 10500879                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libmanagement.so
+7f4bc8eab000-7f4bc8eac000 r--p 00008000 08:01 10500879                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libmanagement.so
+7f4bc8eac000-7f4bc8ead000 rw-p 00009000 08:01 10500879                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libmanagement.so
+7f4bc8ead000-7f4bc8ebe000 r-xp 00000000 08:01 10497284                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnio.so
+7f4bc8ebe000-7f4bc90be000 ---p 00011000 08:01 10497284                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnio.so
+7f4bc90be000-7f4bc90bf000 r--p 00011000 08:01 10497284                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnio.so
+7f4bc90bf000-7f4bc90c0000 rw-p 00012000 08:01 10497284                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnio.so
+7f4bc90c0000-7f4bc92c0000 rw-p 00000000 00:00 0 
+7f4bc92c0000-7f4bc92c3000 ---p 00000000 00:00 0 
+7f4bc92c3000-7f4bc93c1000 rw-p 00000000 00:00 0 
+7f4bc93c1000-7f4bc93c4000 ---p 00000000 00:00 0 
+7f4bc93c4000-7f4bc94c2000 rw-p 00000000 00:00 0 
+7f4bc94c2000-7f4bc94c5000 ---p 00000000 00:00 0 
+7f4bc94c5000-7f4bc97c3000 rw-p 00000000 00:00 0 
+7f4bc97c3000-7f4bc99c3000 rw-p 00000000 00:00 0 
+7f4bc99c3000-7f4bc99da000 r-xp 00000000 08:01 10500888                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnet.so
+7f4bc99da000-7f4bc9bd9000 ---p 00017000 08:01 10500888                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnet.so
+7f4bc9bd9000-7f4bc9bda000 r--p 00016000 08:01 10500888                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnet.so
+7f4bc9bda000-7f4bc9bdb000 rw-p 00017000 08:01 10500888                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnet.so
+7f4bc9bdb000-7f4bc9ddb000 rw-p 00000000 00:00 0 
+7f4bc9ddb000-7f4bc9fdb000 rw-p 00000000 00:00 0 
+7f4bc9fdb000-7f4bca1db000 rw-p 00000000 00:00 0 
+7f4bca1db000-7f4bca3db000 rw-p 00000000 00:00 0 
+7f4bca3db000-7f4bca5db000 rw-p 00000000 00:00 0 
+7f4bca5db000-7f4bca7d1000 rw-p 00000000 00:00 0 
+7f4bca7d1000-7f4bca7db000 ---p 00000000 00:00 0 
+7f4bca7db000-7f4bca9db000 rw-p 00000000 00:00 0 
+7f4bca9db000-7f4bcabdb000 rw-p 00000000 00:00 0 
+7f4bcabdb000-7f4bcaddb000 rw-p 00000000 00:00 0 
+7f4bcae00000-7f4bcb000000 rw-p 00000000 00:00 0 
+7f4bcb000000-7f4bcb200000 rw-p 00000000 00:00 0 
+7f4bcb200000-7f4bcb400000 rw-p 00000000 00:00 0 
+7f4bcb400000-7f4bcb600000 rw-p 00000000 00:00 0 
+7f4bcb600000-7f4bcb800000 rw-p 00000000 00:00 0 
+7f4bcb800000-7f4bcba00000 rw-p 00000000 00:00 0 
+7f4bcba00000-7f4bcbc00000 rw-p 00000000 00:00 0 
+7f4bcbc00000-7f4bcbe00000 rw-p 00000000 00:00 0 
+7f4bcbe00000-7f4bcc000000 rw-p 00000000 00:00 0 
+7f4bcc000000-7f4bcc021000 rw-p 00000000 00:00 0 
+7f4bcc021000-7f4bd0000000 ---p 00000000 00:00 0 
+7f4bd0000000-7f4bd0129000 rw-p 00000000 00:00 0 
+7f4bd0129000-7f4bd4000000 ---p 00000000 00:00 0 
+7f4bd4000000-7f4bd5cf2000 rw-p 00000000 00:00 0 
+7f4bd5cf2000-7f4bd8000000 ---p 00000000 00:00 0 
+7f4bd8000000-7f4bd8eb2000 rw-p 00000000 00:00 0 
+7f4bd8eb2000-7f4bdc000000 ---p 00000000 00:00 0 
+7f4bdc000000-7f4bdc021000 rw-p 00000000 00:00 0 
+7f4bdc021000-7f4be0000000 ---p 00000000 00:00 0 
+7f4be0000000-7f4be1dc5000 rw-p 00000000 00:00 0 
+7f4be1dc5000-7f4be4000000 ---p 00000000 00:00 0 
+7f4be4000000-7f4be4021000 rw-p 00000000 00:00 0 
+7f4be4021000-7f4be8000000 ---p 00000000 00:00 0 
+7f4be8000000-7f4be8021000 rw-p 00000000 00:00 0 
+7f4be8021000-7f4bec000000 ---p 00000000 00:00 0 
+7f4bec000000-7f4bec043000 rw-p 00000000 00:00 0 
+7f4bec043000-7f4bf0000000 ---p 00000000 00:00 0 
+7f4bf0000000-7f4bf0031000 rw-p 00000000 00:00 0 
+7f4bf0031000-7f4bf4000000 ---p 00000000 00:00 0 
+7f4bf4004000-7f4bf4005000 ---p 00000000 00:00 0 
+7f4bf4005000-7f4bf4085000 rw-p 00000000 00:00 0 
+7f4bf4085000-7f4bf4087000 r--s 00016000 08:01 10102173                   /usr/lib/jvm/java-8-openjdk/jre/lib/jce.jar
+7f4bf40a4000-7f4bf40ae000 r--s 00116000 08:01 10497230                   /usr/lib/jvm/java-8-openjdk/jre/lib/ext/localedata.jar
+7f4bf40ae000-7f4bf40b0000 r--s 00008000 08:01 10497226                   /usr/lib/jvm/java-8-openjdk/jre/lib/ext/sunec.jar
+7f4bf40b0000-7f4bf40cc000 r--s 00393000 08:01 10497234                   /usr/lib/jvm/java-8-openjdk/jre/lib/ext/cldrdata.jar
+7f4bf40cc000-7f4bf40df000 r--s 00346000 08:01 10102179                   /usr/lib/jvm/java-8-openjdk/jre/lib/resources.jar
+7f4bf40df000-7f4bf40e2000 ---p 00000000 00:00 0 
+7f4bf40e2000-7f4bf8000000 rw-p 00000000 00:00 0 
+7f4bf8000000-7f4bf8021000 rw-p 00000000 00:00 0 
+7f4bf8021000-7f4bfc000000 ---p 00000000 00:00 0 
+7f4bfc000000-7f4bfc021000 rw-p 00000000 00:00 0 
+7f4bfc021000-7f4c00000000 ---p 00000000 00:00 0 
+7f4c00000000-7f4c00021000 rw-p 00000000 00:00 0 
+7f4c00021000-7f4c04000000 ---p 00000000 00:00 0 
+7f4c04001000-7f4c04004000 r--s 00038000 08:01 10497232                   /usr/lib/jvm/java-8-openjdk/jre/lib/ext/sunpkcs11.jar
+7f4c04004000-7f4c04005000 rwxp 00000000 00:00 0 
+7f4c04005000-7f4c0400b000 r--s 0003b000 08:01 10497231                   /usr/lib/jvm/java-8-openjdk/jre/lib/ext/sunjce_provider.jar
+7f4c0400b000-7f4c04085000 r--s 010ff000 08:01 11043255                   /usr/lib/jvm/java-8-openjdk/lib/tools.jar
+7f4c04085000-7f4c04086000 r--p 00000000 08:01 9962771                    /usr/share/locale/en_GB/LC_MESSAGES/libc.mo
+7f4c04086000-7f4c0408b000 r--s 002f9000 08:01 10102171                   /usr/lib/jvm/java-8-openjdk/jre/lib/charsets.jar
+7f4c0408b000-7f4c04090000 r--s 0009d000 08:01 10102174                   /usr/lib/jvm/java-8-openjdk/jre/lib/jsse.jar
+7f4c04090000-7f4c04290000 rw-p 00000000 00:00 0 
+7f4c04290000-7f4c04490000 rw-p 00000000 00:00 0 
+7f4c04490000-7f4c04690000 rw-p 00000000 00:00 0 
+7f4c04690000-7f4c04695000 r--s 00031000 08:01 8397815                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-svg-dom/1.8/batik-svg-dom-1.8.jar
+7f4c04695000-7f4c04696000 r--s 00002000 08:01 7083304                    /home/adam/.m2/repository/clj-stacktrace/clj-stacktrace/0.2.8/clj-stacktrace-0.2.8.jar
+7f4c04696000-7f4c046a2000 r--s 00085000 08:01 6820875                    /home/adam/.m2/repository/org/clojure/spec.alpha/0.1.143/spec.alpha-0.1.143.jar
+7f4c046a2000-7f4c046a4000 r--s 00005000 08:01 8258946                    /home/adam/.m2/repository/enlive/enlive/1.1.6/enlive-1.1.6.jar
+7f4c046a4000-7f4c046a5000 r--s 00001000 08:01 8135056                    /home/adam/.m2/repository/ring/ring-defaults/0.3.2/ring-defaults-0.3.2.jar
+7f4c046a5000-7f4c046a7000 r--s 00001000 08:01 9048198                    /home/adam/.m2/repository/pjstadig/humane-test-output/0.8.3/humane-test-output-0.8.3.jar
+7f4c046a7000-7f4c046a8000 r--s 00001000 08:01 9048159                    /home/adam/.m2/repository/ring/ring-codec/1.1.0/ring-codec-1.1.0.jar
+7f4c046a8000-7f4c046a9000 r--s 00002000 08:01 8922098                    /home/adam/.m2/repository/json-html/json-html/0.4.4/json-html-0.4.4.jar
+7f4c046a9000-7f4c046ab000 r--s 00007000 08:01 9048192                    /home/adam/.m2/repository/nrepl/nrepl/0.4.5/nrepl-0.4.5.jar
+7f4c046ab000-7f4c046b7000 r--s 00051000 08:01 8397818                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-anim/1.8/batik-anim-1.8.jar
+7f4c046b7000-7f4c046c2000 r--s 00056000 08:01 8001028                    /home/adam/.m2/repository/cider/cider-nrepl/0.18.0/cider-nrepl-0.18.0.jar
+7f4c046c2000-7f4c046c3000 r--s 00001000 08:01 9048176                    /home/adam/.m2/repository/funcool/struct/1.3.0/struct-1.3.0.jar
+7f4c046c3000-7f4c046cd000 r--s 000a5000 08:01 8134325                    /home/adam/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar
+7f4c046cd000-7f4c046d9000 r--s 00076000 08:01 8397808                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-bridge/1.8/batik-bridge-1.8.jar
+7f4c046d9000-7f4c046da000 r--s 00001000 08:01 9048201                    /home/adam/.m2/repository/realize/realize/1.1.0/realize-1.1.0.jar
+7f4c046da000-7f4c046dc000 r--s 00001000 08:01 8259194                    /home/adam/.m2/repository/ring/ring-anti-forgery/1.3.0/ring-anti-forgery-1.3.0.jar
+7f4c046dc000-7f4c046e4000 r--s 000fa000 08:01 9048141                    /home/adam/.m2/repository/org/webjars/bootstrap/4.1.3/bootstrap-4.1.3.jar
+7f4c046e4000-7f4c046e5000 r--s 00005000 08:01 8001553                    /home/adam/.m2/repository/clj-native/clj-native/0.9.5/clj-native-0.9.5.jar
+7f4c046e5000-7f4c046e7000 r--s 0000f000 08:01 6951759                    /home/adam/.m2/repository/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.jar
+7f4c046e7000-7f4c046f2000 r--s 00065000 08:01 9048131                    /home/adam/.m2/repository/ch/qos/logback/logback-core/1.1.3/logback-core-1.1.3.jar
+7f4c046f2000-7f4c046f3000 r--s 00001000 08:01 8001564                    /home/adam/.m2/repository/overtone/midi-clj/0.5.0/midi-clj-0.5.0.jar
+7f4c046f3000-7f4c046f6000 r--s 0000e000 08:01 7348582                    /home/adam/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar
+7f4c046f6000-7f4c046fb000 r--s 0004b000 08:01 8783346                    /home/adam/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.6/jackson-core-2.9.6.jar
+7f4c046fb000-7f4c04704000 r--s 00074000 08:01 8263463                    /home/adam/.m2/repository/io/undertow/undertow-servlet/1.4.14.Final/undertow-servlet-1.4.14.Final.jar
+7f4c04704000-7f4c04727000 r--s 00414000 08:01 8258913                    /home/adam/.m2/repository/org/clojure/google-closure-library/0.0-20130212-95c19e7f0f5f/google-closure-library-0.0-20130212-95c19e7f0f5f.jar
+7f4c04727000-7f4c04728000 r--s 00000000 08:01 8001570                    /home/adam/.m2/repository/clj-glob/clj-glob/1.0.0/clj-glob-1.0.0.jar
+7f4c04728000-7f4c0472a000 r--s 0000b000 08:01 8133888                    /home/adam/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.9.0/jackson-dataformat-cbor-2.9.0.jar
+7f4c0472a000-7f4c0472c000 r--s 00001000 08:01 8265933                    /home/adam/.m2/repository/ring/ring-devel/1.7.0/ring-devel-1.7.0.jar
+7f4c0472c000-7f4c0472e000 r--s 00002000 08:01 6820530                    /home/adam/.m2/repository/riddley/riddley/0.1.12/riddley-0.1.12.jar
+7f4c0472e000-7f4c0472f000 r--s 00006000 08:01 8001928                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-xml/1.8/batik-xml-1.8.jar
+7f4c0472f000-7f4c04733000 r--s 000dc000 08:01 8263460                    /home/adam/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar
+7f4c04733000-7f4c04736000 r--s 00015000 08:01 8134651                    /home/adam/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
+7f4c04736000-7f4c04737000 r--s 00000000 08:01 8133661                    /home/adam/.m2/repository/crypto-random/crypto-random/1.2.0/crypto-random-1.2.0.jar
+7f4c04737000-7f4c04738000 r--s 00002000 08:01 9048181                    /home/adam/.m2/repository/luminus/ring-ttl-session/0.3.2/ring-ttl-session-0.3.2.jar
+7f4c04738000-7f4c0473a000 r--s 00000000 08:01 8392619                    /home/adam/.m2/repository/ring-webjars/ring-webjars/0.2.0/ring-webjars-0.2.0.jar
+7f4c0473a000-7f4c0473b000 r--s 00001000 08:01 8259749                    /home/adam/.m2/repository/com/layerware/hugsql-adapter/0.4.9/hugsql-adapter-0.4.9.jar
+7f4c0473b000-7f4c0473c000 r--s 00001000 08:01 8265918                    /home/adam/.m2/repository/virgil/virgil/0.1.6/virgil-0.1.6.jar
+7f4c0473c000-7f4c0473d000 r--s 00001000 08:01 8259748                    /home/adam/.m2/repository/com/layerware/hugsql-adapter-clojure-java-jdbc/0.4.9/hugsql-adapter-clojure-java-jdbc-0.4.9.jar
+7f4c0473d000-7f4c04742000 r--s 00010000 08:01 8001932                    /home/adam/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar
+7f4c04742000-7f4c04744000 r--s 00006000 08:01 8393158                    /home/adam/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
+7f4c04744000-7f4c04748000 r--s 00016000 08:01 8265921                    /home/adam/.m2/repository/com/cognitect/transit-java/0.8.337/transit-java-0.8.337.jar
+7f4c04748000-7f4c04749000 r--s 00002000 08:01 9048184                    /home/adam/.m2/repository/expiring-map/expiring-map/0.1.8/expiring-map-0.1.8.jar
+7f4c04749000-7f4c0474a000 r--s 00002000 08:01 8265924                    /home/adam/.m2/repository/org/clojure/tools.cli/0.4.0/tools.cli-0.4.0.jar
+7f4c0474a000-7f4c0474b000 r--s 00001000 08:01 8134311                    /home/adam/.m2/repository/org/clojure/data.json/0.2.6/data.json-0.2.6.jar
+7f4c0474b000-7f4c0474f000 r--s 0002f000 08:01 8135171                    /home/adam/.m2/repository/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1.jar
+7f4c0474f000-7f4c04756000 r--s 00056000 08:01 8390067                    /home/adam/.m2/repository/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+7f4c04756000-7f4c04757000 r--s 00002000 08:01 9048167                    /home/adam/.m2/repository/com/carouselapps/to-jdbc-uri/0.5.0/to-jdbc-uri-0.5.0.jar
+7f4c04757000-7f4c04758000 r--s 00002000 08:01 8001926                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-ext/1.8/batik-ext-1.8.jar
+7f4c04758000-7f4c04781000 r--s 001ee000 08:01 8258907                    /home/adam/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar
+7f4c04781000-7f4c04782000 r--s 00004000 08:01 7607588                    /home/adam/.m2/repository/org/clojure/tools.namespace/0.2.11/tools.namespace-0.2.11.jar
+7f4c04782000-7f4c04793000 r--s 0016e000 08:01 8397811                    /home/adam/.m2/repository/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar
+7f4c04793000-7f4c04795000 r--s 0000c000 08:01 8258905                    /home/adam/.m2/repository/args4j/args4j/2.0.16/args4j-2.0.16.jar
+7f4c04795000-7f4c04797000 r--s 00005000 08:01 7083280                    /home/adam/.m2/repository/cheshire/cheshire/5.8.0/cheshire-5.8.0.jar
+7f4c04797000-7f4c04798000 r--s 00006000 08:01 8522790                    /home/adam/.m2/repository/org/webjars/webjars-locator-core/0.35/webjars-locator-core-0.35.jar
+7f4c04798000-7f4c0479d000 r--s 0003d000 08:01 8001551                    /home/adam/.m2/repository/commons-net/commons-net/3.0.1/commons-net-3.0.1.jar
+7f4c0479d000-7f4c047a1000 r--s 00b46000 08:01 8001566                    /home/adam/.m2/repository/overtone/scsynth/3.5.7.0/scsynth-3.5.7.0.jar
+7f4c047a1000-7f4c047a7000 r--s 0004b000 08:01 8397806                    /home/adam/.m2/repository/org/jfree/jcommon/1.0.23/jcommon-1.0.23.jar
+7f4c047a7000-7f4c047d1000 r--s 00430000 08:01 9048145                    /home/adam/.m2/repository/org/webjars/font-awesome/5.3.1/font-awesome-5.3.1.jar
+7f4c047d1000-7f4c047d5000 r--s 00020000 08:01 8397810                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-gvt/1.8/batik-gvt-1.8.jar
+7f4c047d5000-7f4c047d6000 r--s 00004000 08:01 9048179                    /home/adam/.m2/repository/migratus/migratus/1.0.9/migratus-1.0.9.jar
+7f4c047d6000-7f4c047d7000 r--s 00004000 08:01 6951770                    /home/adam/.m2/repository/org/jboss/spec/javax/annotation/jboss-annotations-api_1.2_spec/1.0.0.Final/jboss-annotations-api_1.2_spec-1.0.0.Final.jar
+7f4c047d7000-7f4c047da000 r--s 00006000 08:01 8131465                    /home/adam/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar
+7f4c047da000-7f4c047db000 r--s 00003000 08:01 9048168                    /home/adam/.m2/repository/hikari-cp/hikari-cp/2.6.0/hikari-cp-2.6.0.jar
+7f4c047db000-7f4c047dc000 r--s 00001000 08:01 9048129                    /home/adam/.m2/repository/org/clojure/tools.logging/0.4.1/tools.logging-0.4.1.jar
+7f4c047dc000-7f4c047e3000 r--s 0006e000 08:01 8001550                    /home/adam/.m2/repository/overtone/overtone/0.10.3/overtone-0.10.3.jar
+7f4c047e3000-7f4c047e5000 r--s 00000000 08:01 6820876                    /home/adam/.m2/repository/org/clojure/core.specs.alpha/0.1.24/core.specs.alpha-0.1.24.jar
+7f4c047e5000-7f4c047e6000 r--s 00002000 08:01 9048165                    /home/adam/.m2/repository/conman/conman/0.8.2/conman-0.8.2.jar
+7f4c047e6000-7f4c047e8000 r--s 00001000 08:01 9048191                    /home/adam/.m2/repository/mount/mount/0.1.13/mount-0.1.13.jar
+7f4c047e8000-7f4c047e9000 r--s 00028000 08:01 9048147                    /home/adam/.m2/repository/org/webjars/jquery/3.3.1-1/jquery-3.3.1-1.jar
+7f4c047e9000-7f4c047eb000 r--s 00015000 08:01 8258897                    /home/adam/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar
+7f4c047eb000-7f4c047ed000 r--s 00002000 08:01 8393392                    /home/adam/.m2/repository/org/webjars/webjars-locator/0.34/webjars-locator-0.34.jar
+7f4c047ed000-7f4c047f4000 r--s 00043000 08:01 8001451                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.8/batik-awt-util-1.8.jar
+7f4c047f4000-7f4c047f6000 r--s 00003000 08:01 8258362                    /home/adam/.m2/repository/com/layerware/hugsql-core/0.4.9/hugsql-core-0.4.9.jar
+7f4c047f6000-7f4c047f8000 r--s 00001000 08:01 9048177                    /home/adam/.m2/repository/luminus-immutant/luminus-immutant/0.2.4/luminus-immutant-0.2.4.jar
+7f4c047f8000-7f4c047fa000 r--s 00013000 08:01 7607595                    /home/adam/.m2/repository/clj-tuple/clj-tuple/0.2.2/clj-tuple-0.2.2.jar
+7f4c047fa000-7f4c047fb000 r--s 00003000 08:01 9048155                    /home/adam/.m2/repository/clout/clout/2.2.1/clout-2.2.1.jar
+7f4c047fb000-7f4c047fc000 r--s 00003000 08:01 8133674                    /home/adam/.m2/repository/hiccup/hiccup/1.0.5/hiccup-1.0.5.jar
+7f4c047fc000-7f4c04800000 r--s 0001f000 08:01 8001922                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-dom/1.8/batik-dom-1.8.jar
+7f4c04800000-7f4c04801000 r--s 00005000 08:01 8134323                    /home/adam/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar
+7f4c04801000-7f4c04808000 r--s 0004b000 08:01 8654291                    /home/adam/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+7f4c04808000-7f4c0480b000 r--s 0002a000 08:01 8522786                    /home/adam/.m2/repository/http-kit/http-kit/2.3.0/http-kit-2.3.0.jar
+7f4c0480b000-7f4c0480c000 r--s 00001000 08:01 8001565                    /home/adam/.m2/repository/overtone/libs.handlers/0.2.0/libs.handlers-0.2.0.jar
+7f4c0480c000-7f4c0480e000 r--s 00004000 08:01 8396759                    /home/adam/.m2/repository/metosin/jsonista/0.2.1/jsonista-0.2.1.jar
+7f4c0480e000-7f4c04811000 r--s 0001a000 08:01 6951768                    /home/adam/.m2/repository/org/jboss/xnio/xnio-nio/3.3.6.Final/xnio-nio-3.3.6.Final.jar
+7f4c04811000-7f4c04817000 r--s 00042000 08:01 8000542                    /home/adam/.m2/repository/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
+7f4c04817000-7f4c04818000 r--s 00001000 08:01 6820887                    /home/adam/.m2/repository/org/projectodd/wunderboss/wunderboss-clojure/0.13.1/wunderboss-clojure-0.13.1.jar
+7f4c04818000-7f4c0481e000 r--s 00048000 08:01 8393394                    /home/adam/.m2/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar
+7f4c0481e000-7f4c04827000 r--s 00076000 08:01 6951766                    /home/adam/.m2/repository/org/jboss/xnio/xnio-api/3.3.6.Final/xnio-api-3.3.6.Final.jar
+7f4c04827000-7f4c0486b000 r--s 00341000 08:01 6820874                    /home/adam/.m2/repository/org/clojure/clojure/1.9.0/clojure-1.9.0.jar
+7f4c0486b000-7f4c0486d000 r--s 00004000 08:01 6820534                    /home/adam/.m2/repository/potemkin/potemkin/0.4.3/potemkin-0.4.3.jar
+7f4c0486d000-7f4c0486f000 r--s 0000c000 08:01 6820904                    /home/adam/.m2/repository/org/immutant/web/2.1.9/web-2.1.9.jar
+7f4c0486f000-7f4c04870000 r--s 00000000 08:01 8133662                    /home/adam/.m2/repository/crypto-equality/crypto-equality/1.0.0/crypto-equality-1.0.0.jar
+7f4c04870000-7f4c04871000 r--s 00001000 08:01 8258930                    /home/adam/.m2/repository/medley/medley/1.0.0/medley-1.0.0.jar
+7f4c04871000-7f4c04872000 r--s 00004000 08:01 8001557                    /home/adam/.m2/repository/overtone/osc-clj/0.9.0/osc-clj-0.9.0.jar
+7f4c04872000-7f4c0487e000 r--s 00092000 08:01 8397819                    /home/adam/.m2/repository/org/apache/xmlgraphics/xmlgraphics-commons/2.1/xmlgraphics-commons-2.1.jar
+7f4c0487e000-7f4c04881000 r--s 00016000 08:01 9044116                    /home/adam/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.9.5/jackson-datatype-jsr310-2.9.5.jar
+7f4c04881000-7f4c04882000 r--s 00007000 08:01 8265927                    /home/adam/.m2/repository/ring/ring-core/1.7.0/ring-core-1.7.0.jar
+7f4c04882000-7f4c04884000 r--s 0000a000 08:01 8258911                    /home/adam/.m2/repository/org/json/json/20090211/json-20090211.jar
+7f4c04884000-7f4c04891000 r--s 00109000 08:01 8258919                    /home/adam/.m2/repository/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar
+7f4c04891000-7f4c0489b000 r--s 000bd000 08:01 8258238                    /home/adam/.m2/repository/org/postgresql/postgresql/42.2.4/postgresql-42.2.4.jar
+7f4c0489b000-7f4c0489f000 r--s 00031000 08:01 7214174                    /home/adam/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar
+7f4c0489f000-7f4c048a1000 r--s 00000000 08:01 8001559                    /home/adam/.m2/repository/overtone/byte-spec/0.3.1/byte-spec-0.3.1.jar
+7f4c048a1000-7f4c048a2000 r--s 00093000 08:01 6952103                    /home/adam/.m2/repository/prone/prone/1.6.0/prone-1.6.0.jar
+7f4c048a2000-7f4c048a3000 r--s 00000000 08:01 7607605                    /home/adam/.m2/repository/org/clojure/java.classpath/0.2.3/java.classpath-0.2.3.jar
+7f4c048a3000-7f4c048c1000 r--s 0027d000 08:01 8001930                    /home/adam/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar
+7f4c048c1000-7f4c048c2000 r--s 00002000 08:01 6951434                    /home/adam/.m2/repository/clojure-complete/clojure-complete/0.2.4/clojure-complete-0.2.4.jar
+7f4c048c2000-7f4c048c3000 r--s 00001000 08:01 8258925                    /home/adam/.m2/repository/ns-tracker/ns-tracker/0.3.1/ns-tracker-0.3.1.jar
+7f4c048c3000-7f4c048c7000 r--s 00025000 08:01 8263464                    /home/adam/.m2/repository/io/undertow/undertow-websockets-jsr/1.4.14.Final/undertow-websockets-jsr-1.4.14.Final.jar
+7f4c048c7000-7f4c048c9000 r--s 00009000 08:01 6951762                    /home/adam/.m2/repository/org/jboss/spec/javax/websocket/jboss-websocket-api_1.1_spec/1.1.0.Final/jboss-websocket-api_1.1_spec-1.1.0.Final.jar
+7f4c048c9000-7f4c048cb000 r--s 0000c000 08:01 8265917                    /home/adam/.m2/repository/org/ow2/asm/asm/5.1/asm-5.1.jar
+7f4c048cb000-7f4c048fe000 r--s 00332000 08:01 8258903                    /home/adam/.m2/repository/com/google/javascript/closure-compiler/v20130603/closure-compiler-v20130603.jar
+7f4c048fe000-7f4c04906000 r--s 00028000 08:01 8001920                    /home/adam/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar
+7f4c04906000-7f4c04908000 r--s 00003000 08:01 6820906                    /home/adam/.m2/repository/org/immutant/core/2.1.9/core-2.1.9.jar
+7f4c04908000-7f4c0490a000 r--s 00003000 08:01 8397813                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-script/1.8/batik-script-1.8.jar
+7f4c0490a000-7f4c0490c000 r--s 00013000 08:01 8133886                    /home/adam/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.9.0/jackson-dataformat-smile-2.9.0.jar
+7f4c0490c000-7f4c0490d000 r--s 00009000 08:01 6951432                    /home/adam/.m2/repository/org/clojure/tools.nrepl/0.2.12/tools.nrepl-0.2.12.jar
+7f4c0490d000-7f4c0490e000 r--s 00001000 08:01 8001555                    /home/adam/.m2/repository/overtone/at-at/1.2.0/at-at-1.2.0.jar
+7f4c0490e000-7f4c0490f000 r--s 00001000 08:01 9048203                    /home/adam/.m2/repository/ring/ring-mock/0.3.2/ring-mock-0.3.2.jar
+7f4c0490f000-7f4c04912000 r--s 0000b000 08:01 8397804                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-parser/1.8/batik-parser-1.8.jar
+7f4c04912000-7f4c04914000 r--s 00008000 08:01 9048125                    /home/adam/.m2/repository/net/jodah/expiringmap/0.5.8/expiringmap-0.5.8.jar
+7f4c04914000-7f4c04918000 r--s 0002b000 08:01 6951764                    /home/adam/.m2/repository/org/jboss/spec/javax/servlet/jboss-servlet-api_3.1_spec/1.0.0.Final/jboss-servlet-api_3.1_spec-1.0.0.Final.jar
+7f4c04918000-7f4c0493f000 r--s 001e2000 08:01 8263462                    /home/adam/.m2/repository/io/undertow/undertow-core/1.4.14.Final/undertow-core-1.4.14.Final.jar
+7f4c0493f000-7f4c04941000 r--s 0000f000 08:01 9044114                    /home/adam/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.9.6/jackson-datatype-joda-2.9.6.jar
+7f4c04941000-7f4c04944000 r--s 0000f000 08:01 8258893                    /home/adam/.m2/repository/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.jar
+7f4c04944000-7f4c04945000 r--s 0000c000 08:01 8258363                    /home/adam/.m2/repository/org/clojure/tools.reader/1.2.2/tools.reader-1.2.2.jar
+7f4c04945000-7f4c04947000 r--s 00006000 08:01 6951757                    /home/adam/.m2/repository/org/projectodd/wunderboss/wunderboss-web-undertow/0.13.1/wunderboss-web-undertow-0.13.1.jar
+7f4c04947000-7f4c04949000 r--s 00001000 08:01 9048178                    /home/adam/.m2/repository/luminus-migrations/luminus-migrations/0.5.3/luminus-migrations-0.5.3.jar
+7f4c04949000-7f4c0494a000 r--s 00001000 08:01 8134668                    /home/adam/.m2/repository/ring/ring-ssl/0.3.0/ring-ssl-0.3.0.jar
+7f4c0494a000-7f4c0495d000 r--s 00137000 08:01 7084013                    /home/adam/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6.jar
+7f4c0495d000-7f4c0495e000 ---p 00000000 00:00 0 
+7f4c0495e000-7f4c04a5e000 rw-p 00000000 00:00 0 
+7f4c04a5e000-7f4c04a61000 ---p 00000000 00:00 0 
+7f4c04a61000-7f4c04b5f000 rw-p 00000000 00:00 0 
+7f4c04b5f000-7f4c04b60000 ---p 00000000 00:00 0 
+7f4c04b60000-7f4c04b63000 ---p 00000000 00:00 0 
+7f4c04b63000-7f4c04c60000 rw-p 00000000 00:00 0 
+7f4c04c60000-7f4c04c61000 ---p 00000000 00:00 0 
+7f4c04c61000-7f4c04c64000 ---p 00000000 00:00 0 
+7f4c04c64000-7f4c04d61000 rw-p 00000000 00:00 0 
+7f4c04d61000-7f4c04d62000 ---p 00000000 00:00 0 
+7f4c04d62000-7f4c04d65000 ---p 00000000 00:00 0 
+7f4c04d65000-7f4c04e62000 rw-p 00000000 00:00 0 
+7f4c04e62000-7f4c05000000 r--p 00000000 08:01 9445291                    /usr/lib/locale/locale-archive
+7f4c05000000-7f4c06880000 rwxp 00000000 00:00 0 
+7f4c06880000-7f4c14000000 ---p 00000000 00:00 0 
+7f4c14000000-7f4c16701000 rw-p 00000000 00:00 0 
+7f4c16701000-7f4c18000000 ---p 00000000 00:00 0 
+7f4c18000000-7f4c18002000 r--s 00006000 08:01 9048156                    /home/adam/.m2/repository/expound/expound/0.7.1/expound-0.7.1.jar
+7f4c18002000-7f4c18006000 r--s 0001b000 08:01 8265915                    /home/adam/.m2/repository/javax/xml/bind/jaxb-api/2.3.0/jaxb-api-2.3.0.jar
+7f4c18006000-7f4c18007000 r--s 00003000 08:01 9048153                    /home/adam/.m2/repository/compojure/compojure/1.6.1/compojure-1.6.1.jar
+7f4c18007000-7f4c18008000 r--s 00003000 08:01 8396802                    /home/adam/.m2/repository/metosin/muuntaja/0.6.0/muuntaja-0.6.0.jar
+7f4c18008000-7f4c1800a000 r--s 00005000 08:01 6821080                    /home/adam/.m2/repository/org/clojure/java.jdbc/0.7.7/java.jdbc-0.7.7.jar
+7f4c1800a000-7f4c18010000 r--s 00068000 08:01 8258909                    /home/adam/.m2/repository/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.jar
+7f4c18010000-7f4c18012000 r--s 00008000 08:01 8397821                    /home/adam/.m2/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar
+7f4c18012000-7f4c18013000 r--s 00001000 08:01 8134669                    /home/adam/.m2/repository/ring/ring-headers/0.3.0/ring-headers-0.3.0.jar
+7f4c18013000-7f4c18024000 r--s 0008a000 08:01 8654285                    /home/adam/.m2/repository/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar
+7f4c18024000-7f4c18025000 r--s 00003000 08:01 9048197                    /home/adam/.m2/repository/nrepl/bencode/1.0.0/bencode-1.0.0.jar
+7f4c18025000-7f4c18027000 r--s 0006b000 08:01 9048143                    /home/adam/.m2/repository/org/webjars/popper.js/1.14.3/popper.js-1.14.3.jar
+7f4c18027000-7f4c1802b000 r--s 00020000 08:01 9048123                    /home/adam/.m2/repository/com/zaxxer/HikariCP/3.2.0/HikariCP-3.2.0.jar
+7f4c1802b000-7f4c18041000 r--s 0045d000 08:01 8397823                    /home/adam/.m2/repository/clj-pdf/clj-pdf/2.2.33/clj-pdf-2.2.33.jar
+7f4c18041000-7f4c18043000 r--s 0000f000 08:01 8258915                    /home/adam/.m2/repository/org/clojure/google-closure-library-third-party/0.0-20130212-95c19e7f0f5f/google-closure-library-third-party-0.0-20130212-95c19e7f0f5f.jar
+7f4c18043000-7f4c1804a000 r--s 00038000 08:01 8001924                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-css/1.8/batik-css-1.8.jar
+7f4c1804a000-7f4c1804d000 r--s 0000a000 08:01 6820884                    /home/adam/.m2/repository/org/projectodd/wunderboss/wunderboss-core/0.13.1/wunderboss-core-0.13.1.jar
+7f4c1804d000-7f4c1804e000 r--s 00001000 08:01 8265919                    /home/adam/.m2/repository/com/cognitect/transit-clj/0.8.313/transit-clj-0.8.313.jar
+7f4c1804e000-7f4c18050000 r--s 00004000 08:01 9048187                    /home/adam/.m2/repository/markdown-clj/markdown-clj/1.0.2/markdown-clj-1.0.2.jar
+7f4c18050000-7f4c18051000 r--s 00003000 08:01 8258960                    /home/adam/.m2/repository/hiccups/hiccups/0.3.0/hiccups-0.3.0.jar
+7f4c18051000-7f4c18057000 r--s 0003f000 08:01 9048127                    /home/adam/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar
+7f4c18057000-7f4c18058000 r--s 00001000 08:01 8133640                    /home/adam/.m2/repository/org/clojure/tools.macro/0.1.5/tools.macro-0.1.5.jar
+7f4c18058000-7f4c1805c000 r--s 00b6f000 08:01 8001567                    /home/adam/.m2/repository/overtone/scsynth-extras/3.5.7.0/scsynth-extras-3.5.7.0.jar
+7f4c1805c000-7f4c18060000 r--s 0004e000 08:01 9048140                    /home/adam/.m2/repository/org/webjars/bower/tether/1.4.4/tether-1.4.4.jar
+7f4c18060000-7f4c18062000 r--s 00006000 08:01 6951760                    /home/adam/.m2/repository/org/projectodd/wunderboss/wunderboss-web/0.13.1/wunderboss-web-0.13.1.jar
+7f4c18062000-7f4c18063000 r--s 00001000 08:01 8133887                    /home/adam/.m2/repository/tigris/tigris/0.1.1/tigris-0.1.1.jar
+7f4c18063000-7f4c18065000 r--s 0000d000 08:01 8265931                    /home/adam/.m2/repository/selmer/selmer/1.12.1/selmer-1.12.1.jar
+7f4c18065000-7f4c18067000 r--s 00016000 08:01 9048157                    /home/adam/.m2/repository/instaparse/instaparse/1.4.8/instaparse-1.4.8.jar
+7f4c18067000-7f4c18069000 r--s 00022000 08:01 8258894                    /home/adam/.m2/repository/org/clojure/clojurescript/0.0-2069/clojurescript-0.0-2069.jar
+7f4c18069000-7f4c1806b000 r--s 00004000 08:01 9048190                    /home/adam/.m2/repository/metosin/ring-http-response/0.9.0/ring-http-response-0.9.0.jar
+7f4c1806b000-7f4c18071000 r--s 00040000 08:01 8134321                    /home/adam/.m2/repository/org/msgpack/msgpack/0.6.12/msgpack-0.6.12.jar
+7f4c18071000-7f4c18073000 r--s 00001000 08:01 8258323                    /home/adam/.m2/repository/com/layerware/hugsql/0.4.9/hugsql-0.4.9.jar
+7f4c18073000-7f4c18074000 r--s 00001000 08:01 9044118                    /home/adam/.m2/repository/cprop/cprop/0.1.13/cprop-0.1.13.jar
+7f4c18074000-7f4c18075000 r--s 00012000 08:01 6820898                    /home/adam/.m2/repository/funcool/cuerdas/2.0.5/cuerdas-2.0.5.jar
+7f4c18075000-7f4c18078000 ---p 00000000 00:00 0 
+7f4c18078000-7f4c18176000 rw-p 00000000 00:00 0 
+7f4c18176000-7f4c18179000 ---p 00000000 00:00 0 
+7f4c18179000-7f4c18277000 rw-p 00000000 00:00 0 
+7f4c18277000-7f4c1827a000 ---p 00000000 00:00 0 
+7f4c1827a000-7f4c18378000 rw-p 00000000 00:00 0 
+7f4c18378000-7f4c18379000 ---p 00000000 00:00 0 
+7f4c18379000-7f4c19439000 rw-p 00000000 00:00 0 
+7f4c19439000-7f4c19608000 r--s 03c31000 08:01 10102175                   /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+7f4c19608000-7f4c1a240000 rw-p 00000000 00:00 0 
+7f4c1a240000-7f4c1a241000 ---p 00000000 00:00 0 
+7f4c1a241000-7f4c1a341000 rw-p 00000000 00:00 0 
+7f4c1a341000-7f4c1a342000 ---p 00000000 00:00 0 
+7f4c1a342000-7f4c1a442000 rw-p 00000000 00:00 0 
+7f4c1a442000-7f4c1a443000 ---p 00000000 00:00 0 
+7f4c1a443000-7f4c1a543000 rw-p 00000000 00:00 0 
+7f4c1a543000-7f4c1a544000 ---p 00000000 00:00 0 
+7f4c1a544000-7f4c1a6b5000 rw-p 00000000 00:00 0 
+7f4c1a6b5000-7f4c1a8c6000 ---p 00000000 00:00 0 
+7f4c1a8c6000-7f4c1a937000 rw-p 00000000 00:00 0 
+7f4c1a937000-7f4c1ab47000 ---p 00000000 00:00 0 
+7f4c1ab47000-7f4c1ac88000 rw-p 00000000 00:00 0 
+7f4c1ac88000-7f4c1aceb000 rw-p 00000000 00:00 0 
+7f4c1aceb000-7f4c1b049000 ---p 00000000 00:00 0 
+7f4c1b049000-7f4c1b051000 r-xp 00000000 08:01 10497289                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libzip.so
+7f4c1b051000-7f4c1b250000 ---p 00008000 08:01 10497289                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libzip.so
+7f4c1b250000-7f4c1b251000 r--p 00007000 08:01 10497289                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libzip.so
+7f4c1b251000-7f4c1b252000 rw-p 00008000 08:01 10497289                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libzip.so
+7f4c1b252000-7f4c1b25d000 r-xp 00000000 08:01 9438383                    /usr/lib/libnss_files-2.27.so
+7f4c1b25d000-7f4c1b45c000 ---p 0000b000 08:01 9438383                    /usr/lib/libnss_files-2.27.so
+7f4c1b45c000-7f4c1b45d000 r--p 0000a000 08:01 9438383                    /usr/lib/libnss_files-2.27.so
+7f4c1b45d000-7f4c1b45e000 rw-p 0000b000 08:01 9438383                    /usr/lib/libnss_files-2.27.so
+7f4c1b45e000-7f4c1b464000 rw-p 00000000 00:00 0 
+7f4c1b464000-7f4c1b492000 r-xp 00000000 08:01 10497287                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjava.so
+7f4c1b492000-7f4c1b691000 ---p 0002e000 08:01 10497287                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjava.so
+7f4c1b691000-7f4c1b692000 r--p 0002d000 08:01 10497287                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjava.so
+7f4c1b692000-7f4c1b694000 rw-p 0002e000 08:01 10497287                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjava.so
+7f4c1b694000-7f4c1b6a1000 r-xp 00000000 08:01 10500942                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libverify.so
+7f4c1b6a1000-7f4c1b8a0000 ---p 0000d000 08:01 10500942                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libverify.so
+7f4c1b8a0000-7f4c1b8a2000 r--p 0000c000 08:01 10500942                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libverify.so
+7f4c1b8a2000-7f4c1b8a3000 rw-p 0000e000 08:01 10500942                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libverify.so
+7f4c1b8a3000-7f4c1b8aa000 r-xp 00000000 08:01 9437897                    /usr/lib/librt-2.27.so
+7f4c1b8aa000-7f4c1baa9000 ---p 00007000 08:01 9437897                    /usr/lib/librt-2.27.so
+7f4c1baa9000-7f4c1baaa000 r--p 00006000 08:01 9437897                    /usr/lib/librt-2.27.so
+7f4c1baaa000-7f4c1baab000 rw-p 00007000 08:01 9437897                    /usr/lib/librt-2.27.so
+7f4c1baab000-7f4c1bc3e000 r-xp 00000000 08:01 9437773                    /usr/lib/libm-2.27.so
+7f4c1bc3e000-7f4c1be3e000 ---p 00193000 08:01 9437773                    /usr/lib/libm-2.27.so
+7f4c1be3e000-7f4c1be3f000 r--p 00193000 08:01 9437773                    /usr/lib/libm-2.27.so
+7f4c1be3f000-7f4c1be40000 rw-p 00194000 08:01 9437773                    /usr/lib/libm-2.27.so
+7f4c1be40000-7f4c1cae7000 r-xp 00000000 08:01 11012769                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/server/libjvm.so
+7f4c1cae7000-7f4c1cce6000 ---p 00ca7000 08:01 11012769                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/server/libjvm.so
+7f4c1cce6000-7f4c1cd7b000 r--p 00ca6000 08:01 11012769                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/server/libjvm.so
+7f4c1cd7b000-7f4c1cda3000 rw-p 00d3b000 08:01 11012769                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/server/libjvm.so
+7f4c1cda3000-7f4c1cdd4000 rw-p 00000000 00:00 0 
+7f4c1cdd4000-7f4c1cf87000 r-xp 00000000 08:01 9438747                    /usr/lib/libc-2.27.so
+7f4c1cf87000-7f4c1d186000 ---p 001b3000 08:01 9438747                    /usr/lib/libc-2.27.so
+7f4c1d186000-7f4c1d18a000 r--p 001b2000 08:01 9438747                    /usr/lib/libc-2.27.so
+7f4c1d18a000-7f4c1d18c000 rw-p 001b6000 08:01 9438747                    /usr/lib/libc-2.27.so
+7f4c1d18c000-7f4c1d190000 rw-p 00000000 00:00 0 
+7f4c1d190000-7f4c1d193000 r-xp 00000000 08:01 9437788                    /usr/lib/libdl-2.27.so
+7f4c1d193000-7f4c1d392000 ---p 00003000 08:01 9437788                    /usr/lib/libdl-2.27.so
+7f4c1d392000-7f4c1d393000 r--p 00002000 08:01 9437788                    /usr/lib/libdl-2.27.so
+7f4c1d393000-7f4c1d394000 rw-p 00003000 08:01 9437788                    /usr/lib/libdl-2.27.so
+7f4c1d394000-7f4c1d3a2000 r-xp 00000000 08:01 11012772                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/jli/libjli.so
+7f4c1d3a2000-7f4c1d5a1000 ---p 0000e000 08:01 11012772                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/jli/libjli.so
+7f4c1d5a1000-7f4c1d5a2000 r--p 0000d000 08:01 11012772                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/jli/libjli.so
+7f4c1d5a2000-7f4c1d5a3000 rw-p 0000e000 08:01 11012772                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/jli/libjli.so
+7f4c1d5a3000-7f4c1d5b9000 r-xp 00000000 08:01 9443172                    /usr/lib/libz.so.1.2.11
+7f4c1d5b9000-7f4c1d7b8000 ---p 00016000 08:01 9443172                    /usr/lib/libz.so.1.2.11
+7f4c1d7b8000-7f4c1d7b9000 r--p 00015000 08:01 9443172                    /usr/lib/libz.so.1.2.11
+7f4c1d7b9000-7f4c1d7ba000 rw-p 00016000 08:01 9443172                    /usr/lib/libz.so.1.2.11
+7f4c1d7ba000-7f4c1d7d3000 r-xp 00000000 08:01 9438823                    /usr/lib/libpthread-2.27.so
+7f4c1d7d3000-7f4c1d9d2000 ---p 00019000 08:01 9438823                    /usr/lib/libpthread-2.27.so
+7f4c1d9d2000-7f4c1d9d3000 r--p 00018000 08:01 9438823                    /usr/lib/libpthread-2.27.so
+7f4c1d9d3000-7f4c1d9d4000 rw-p 00019000 08:01 9438823                    /usr/lib/libpthread-2.27.so
+7f4c1d9d4000-7f4c1d9d8000 rw-p 00000000 00:00 0 
+7f4c1d9d8000-7f4c1d9fd000 r-xp 00000000 08:01 9438751                    /usr/lib/ld-2.27.so
+7f4c1d9fd000-7f4c1da00000 r--s 00018000 08:01 8001851                    /home/adam/.m2/repository/org/apache/xmlgraphics/batik-util/1.8/batik-util-1.8.jar
+7f4c1da00000-7f4c1daca000 rw-p 00000000 00:00 0 
+7f4c1daca000-7f4c1dacb000 ---p 00000000 00:00 0 
+7f4c1dacb000-7f4c1dace000 ---p 00000000 00:00 0 
+7f4c1dace000-7f4c1dbcf000 rw-p 00000000 00:00 0 
+7f4c1dbcf000-7f4c1dbd0000 r--s 00001000 08:01 9048169                    /home/adam/.m2/repository/org/tobereplaced/lettercase/1.0.0/lettercase-1.0.0.jar
+7f4c1dbd0000-7f4c1dbd1000 r--s 00005000 08:01 9048128                    /home/adam/.m2/repository/clj-time/clj-time/0.14.4/clj-time-0.14.4.jar
+7f4c1dbd1000-7f4c1dbf2000 rw-p 00000000 00:00 0 
+7f4c1dbf2000-7f4c1dbfa000 rw-s 00000000 00:27 19                         /tmp/hsperfdata_adam/1669
+7f4c1dbfa000-7f4c1dbfb000 rw-p 00000000 00:00 0 
+7f4c1dbfb000-7f4c1dbfc000 r--p 00000000 00:00 0 
+7f4c1dbfc000-7f4c1dbfd000 r--p 00024000 08:01 9438751                    /usr/lib/ld-2.27.so
+7f4c1dbfd000-7f4c1dbfe000 rw-p 00025000 08:01 9438751                    /usr/lib/ld-2.27.so
+7f4c1dbfe000-7f4c1dbff000 rw-p 00000000 00:00 0 
+7ffd1d63e000-7ffd1d663000 rw-p 00000000 00:00 0                          [stack]
+7ffd1d746000-7ffd1d748000 r--p 00000000 00:00 0                          [vvar]
+7ffd1d748000-7ffd1d74a000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dconf=dev-config.edn -Dclojure.compile.path=/home/adam/clojure-projects/spheres/target/default/classes -Dspheres.version=0.1.0-SNAPSHOT -Dclojure.debug=false -Djava.library.path=/home/adam/clojure-projects/spheres/target/default/native/linux/x86_64 
+java_command: clojure.main -i /tmp/form-init8492215556691035299.clj
+java_class_path (initial): /home/adam/clojure-projects/spheres/test/clj:/home/adam/clojure-projects/spheres/env/dev/clj:/home/adam/clojure-projects/spheres/src/clj:/home/adam/clojure-projects/spheres/env/dev/resources:/home/adam/clojure-projects/spheres/dev-resources:/home/adam/clojure-projects/spheres/resources:/home/adam/clojure-projects/spheres/target/default/classes:/home/adam/.m2/repository/org/apache/xmlgraphics/batik-util/1.8/batik-util-1.8.jar:/home/adam/.m2/repository/clj-time/clj-time/0.14.4/clj-time-0.14.4.jar:/home/adam/.m2/repository/org/tobereplaced/lettercase/1.0.0/lettercase-1.0.0.jar:/home/adam/.m2/repository/funcool/cuerdas/2.0.5/cuerdas-2.0.5.jar:/home/adam/.m2/repository/cprop/cprop/0.1.13/cprop-0.1.13.jar:/home/adam/.m2/repository/com/layerware/hugsql/0.4.9/hugsql-0.4.9.jar:/home/adam/.m2/repository/org/msgpack/msgpack/0.6.12/msgpack-0.6.12.jar:/home/adam/.m2/repository/metosin/ring-http-response/0.9.0/ring-http-response-0.9.0.jar:/home/adam/.m2/repository/org/clojure/clojurescript/0.0-2069/clojurescript-0.0-2069.jar:/home/adam/.m2/repository/instaparse/instaparse/1.4.8/instaparse-1.4.8.jar:/home/adam/.m2/repository/selmer/selmer/1.12.1/selmer-1.12.1.jar:/home/adam/.m2/repository/tigris/tigris/0.1.1/tigris-0.1.1.jar:/home/adam/.m2/repository/org/projectodd/wunderboss/wunderboss-web/0.13.1/wunderboss-web-0.13.1.jar:/home/adam/.m2/repository/org/webjars/bower/tether/1.4.4/tether-1.4.4.jar:/home/adam/.m2/repository/overtone/scsynth-extras/3.5.7.0/scsynth-extras-3.5.7.0.jar:/home/adam/.m2/repository/org/clojure/tools.macro/0.1.5/tools.macro-0.1.5.jar:/home/adam/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar:/home/adam/.m2/repository/hiccups/hiccups/0.3.0/hiccups-0.3.0.jar:/home/adam/.m2/repository/markdown-clj/markdown-clj/1.0.2/markdown-clj-1.0.2.jar:/home/adam/.m2/repository/com/cognitect/transit-clj/0.8.313/transit-clj-0.8.313.jar:/home/adam/.m2/repository/org/projectodd/wunderboss/wunderboss-core/0.13.1/wunderbos
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/home/adam/anaconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xaac6c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xaac6c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8e2e80], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8e2e80], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8e2e80], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8e2e80], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8e2d30], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8e31e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8e31e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8e31e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8e31e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=ManjaroLinux
+DISTRIB_RELEASE=17.1.11
+DISTRIB_CODENAME=Hakoila
+DISTRIB_DESCRIPTION="Manjaro Linux"
+
+uname:Linux 4.9.111-1-MANJARO #1 SMP PREEMPT Tue Jul 3 17:36:44 UTC 2018 x86_64
+libc:glibc 2.27 NPTL 2.27 
+rlimit: STACK 8192k, CORE infinity, NPROC 30705, NOFILE 4096, AS infinity
+load average:0,25 0,23 0,14
+
+/proc/meminfo:
+MemTotal:        7872804 kB
+MemFree:         5404248 kB
+MemAvailable:    5870376 kB
+Buffers:           85508 kB
+Cached:           709944 kB
+SwapCached:            0 kB
+Active:          1714872 kB
+Inactive:         508156 kB
+Active(anon):    1439752 kB
+Inactive(anon):   147020 kB
+Active(file):     275120 kB
+Inactive(file):   361136 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       9227464 kB
+SwapFree:        9227464 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:       1418688 kB
+Mapped:           228432 kB
+Shmem:            159156 kB
+Slab:             142648 kB
+SReclaimable:     100440 kB
+SUnreclaim:        42208 kB
+KernelStack:        5632 kB
+PageTables:        19892 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    13163864 kB
+Committed_AS:    3699664 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    911360 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      100976 kB
+DirectMap2M:     3782656 kB
+DirectMap1G:     4194304 kB
+
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i7-5600U CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2a
+cpu MHz		: 2378.466
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb invpcid_single ibrs ibpb stibp kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap intel_pt xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 5190.38
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i7-5600U CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2a
+cpu MHz		: 2475.427
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb invpcid_single ibrs ibpb stibp kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap intel_pt xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 5190.38
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i7-5600U CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2a
+cpu MHz		: 2003.161
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb invpcid_single ibrs ibpb stibp kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap intel_pt xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 5190.38
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i7-5600U CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2a
+cpu MHz		: 2378.942
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb invpcid_single ibrs ibpb stibp kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap intel_pt xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 5190.38
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 7872804k(5404248k free), swap 9227464k(9227464k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.172-b11) for linux-amd64 JRE (1.8.0_172-b11), built on Apr 26 2018 02:09:23 by "builduser" with gcc 7.3.1 20180406
+
+time: Thu Sep 27 17:46:52 2018
+elapsed time: 246 seconds (0d 0h 4m 6s)
+
